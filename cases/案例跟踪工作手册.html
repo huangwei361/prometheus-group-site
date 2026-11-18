@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>案例跟踪工作手册</title>
+<style>
+:root{--p1:#8b5cf6;--p2:#7c3aed;--p3:#c4b5fd;--bg:#0a0612;--card:#120b20;--tx:#e8e4f0;--tx2:#9d94b5;--line:rgba(168,85,247,.18);--acc:#38bdf8;--ok:#34d399;--warn:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:"Noto Sans SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--tx);line-height:1.85;padding:0 0 80px}
+.doc{max-width:900px;margin:0 auto;padding:0 24px}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,6,18,.92);backdrop-filter:blur(20px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1200px;margin:0 auto;padding:14px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-size:1.05em;font-weight:700;letter-spacing:3px;color:#fff}
+.logo span{font-size:.55em;color:var(--tx2);letter-spacing:2px;display:block}
+.nav-links{display:flex;gap:22px;flex-wrap:wrap}
+.nav-links a{color:var(--tx2);text-decoration:none;font-size:.82em;letter-spacing:1px}
+.nav-links a:hover{color:var(--p3)}
+.hero{padding:56px 0 28px;border-bottom:1px solid var(--line);margin-bottom:34px}
+.hero .tag{display:inline-block;padding:5px 16px;border:1px solid var(--line);border-radius:30px;font-size:.7em;letter-spacing:2px;color:var(--tx2);margin-bottom:14px}
+.hero h1{font-size:clamp(1.8em,4.2vw,2.8em);font-weight:700;letter-spacing:1px;margin-bottom:10px}
+.hero p{color:var(--tx2);font-size:.92em}
+h1{font-size:2em;margin:34px 0 16px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+h2{font-size:1.4em;margin:34px 0 14px;color:var(--p3)}
+h3{font-size:1.12em;margin:24px 0 10px;color:#fff}
+h4{font-size:1em;margin:18px 0 8px;color:var(--acc)}
+p{margin:12px 0}
+ul,ol{margin:12px 0 12px 24px}
+li{margin:6px 0}
+a{color:var(--acc)}
+hr{border:0;border-top:1px solid var(--line);margin:32px 0}
+code{background:rgba(168,85,247,.14);border:1px solid var(--line);border-radius:5px;padding:1px 6px;font-size:.88em;font-family:Consolas,Monaco,monospace}
+pre.code{background:#07040d;border:1px solid var(--line);border-radius:10px;padding:16px 18px;overflow-x:auto;margin:14px 0}
+pre.code code{background:none;border:none;padding:0;font-size:.85em;line-height:1.7}
+blockquote{border-left:3px solid var(--p2);background:rgba(124,58,237,.07);padding:14px 18px;margin:16px 0;border-radius:0 8px 8px 0;color:var(--tx2)}
+blockquote p{margin:6px 0}
+table.md-table{width:100%;border-collapse:collapse;margin:18px 0;font-size:.9em;display:block;overflow-x:auto}
+table.md-table th{background:rgba(168,85,247,.14);color:#fff;text-align:left;padding:10px 12px;border:1px solid var(--line);white-space:nowrap}
+table.md-table td{padding:9px 12px;border:1px solid rgba(255,255,255,.06);vertical-align:top}
+table.md-table tr:nth-child(even) td{background:rgba(255,255,255,.02)}
+strong{color:#fff}
+del{opacity:.6}
+footer{max-width:900px;margin:50px auto 0;padding:22px 24px;border-top:1px solid var(--line);color:var(--tx2);font-size:.8em;text-align:center}
+@media(max-width:640px){.nav-in{flex-direction:column;align-items:flex-start}}
+</style>
+</head>
+<body>
+<nav><div class="nav-in">
+<div class="logo">PROMETHEUS<span>普罗米修斯集团</span></div>
+<div class="nav-links">
+<a href="../index.html">集团首页</a>
+<a href="index.html">案例跟踪中心</a>
+<a href="../index.html#companies">旗下公司</a>
+</div>
+</div></nav>
+
+<div class="hero"><div class="doc">
+<span class="tag">CASE TRACKING PLAYBOOK</span>
+<h1>长期健康案例跟踪工作手册</h1>
+<p>把每个案例从「看过一次」变成「一直在盯」，并且盯出来的数据能直接喂给 AI 系统、支撑产品决策。</p>
+</div></div>
+
+<div class="doc">
+<p>﻿# 长期健康案例跟踪工作手册</p>
+<blockquote>版本 v1.0 ｜ 生效日期 2026-11-18 ｜ 适用对象：菲玛科技 AI 平台组、维塔生命临床前组、瑞吉再生类器官组 制定：普罗米修斯集团总部（枢）</blockquote>
+<hr>
+<h2>0. 这份手册是干什么的（一句话）</h2>
+<p><strong>把每个案例从"看过一次"变成"一直在盯"，并且盯出来的数据能直接喂给 AI 系统、支撑产品决策。</strong></p>
+<p>不是写病历，是建一条会长大、能查、能交差的数据线。</p>
+<hr>
+<h2>1. 为什么要有这套东西（背景，通俗版）</h2>
+<p>现在的状况很典型：一个病人看了一次医生，拿到一张化验单，写了个病历，然后<strong>就断了</strong>。</p>
+<p>三个月后病人说"最近有点不舒服"，医生问"上次指标是多少？"——查不到。</p>
+<p>我们要解决的正是这个断点：</p>
+<table class="md-table"><thead><tr><th>老办法</th><th>新办法</th></tr></thead><tbody><tr><td>一次性问诊，看完就散</td><td>建档 → 定期回填 → 长期趋势</td></tr><tr><td>只有化验单，没有时间轴</td><td>基线 / 当前 / 目标 / 趋势 四栏对照</td></tr><tr><td>靠记忆判断"是不是变差了"</td><td>用数字看趋势，看连续 3 次而不是看 1 次</td></tr><tr><td>经验躺在某个医生脑子里</td><td>变成结构化数据，能训练 AI，能沉淀成产品</td></tr></tbody></table>
+<p><strong>一句话：病人是"数据源"，数据是"产品原料"。我们要做的是把原料标准化地采上来。</strong></p>
+<hr>
+<h2>2. 一个案例由哪几块组成（固定结构）</h2>
+<p>每个案例必须包含这 8 块，缺一块就是没建档完成：</p>
+<ol><li><strong>病例档案</strong>（<code>core</code>）— 编号、年龄段、性别、主诊断、病程、当前用药、核心问题</li><li><strong>诊断盲点清单</strong>（<code>core</code>）— 这个病"最容易被漏掉的前提"有哪些，各 5–10 条</li><li><strong>跟踪指标体系</strong>（<code>m1</code> + <code>m2</code>）— 分 4–6 组，每项含基线/当前/目标/频次/趋势</li><li><strong>治疗与干预阶梯</strong>（<code>path</code>）— 阶段 0 到 N，每阶段写清"做什么、什么时候触发、谁负责"</li><li><strong>病程时间轴</strong>（<code>path</code>）— 关键节点，带日期</li><li><strong>随访节奏表</strong>（<code>path</code>）— 什么项目、多久一次、为什么</li><li><strong>AI 分工表</strong>（<code>path</code>）— AI 在这个案例里具体干哪几件事</li><li><strong>免责声明</strong>（<code>core</code>）— 固定话术，见第 6 节</li></ol>
+<p><strong>文件对应关系（务必记住）：</strong></p>
+<pre class="code"><code>data/c0xx-core.json   → 块 1、2、8
+data/c0xx-m1.json     → 块 3 的前半（核心指标）
+data/c0xx-m2.json     → 块 3 的后半（副作用/共病/风险）
+data/c0xx-path.json   → 块 4、5、6、7</code></pre>
+<p><strong>构建后生成 <code>data/c0xx.js</code>，页面 <code>&lt;script&gt;</code> 引入它渲染。不要手改 .js，只改 .json。</strong></p>
+<hr>
+<h2>3. 日常操作流程（三条线并行）</h2>
+<h3>线 A：每周数据回填（菲玛科技主责）</h3>
+<p><strong>第一步：拿到新数据</strong>（复查报告、化验单、就诊记录、用药变化、副作用反馈）</p>
+<p><strong>第二步：写进 JSON</strong>——只改对应指标的 <code>current</code> 和 <code>trend</code> 两个字段，不要动 <code>target</code>（目标值是医师定的，不是我们定的）。</p>
+<p><strong>第三步：跑构建</strong></p>
+<pre class="code"><code>powershell -NoProfile -ExecutionPolicy Bypass -File group\cases\build.ps1</code></pre>
+<p><strong>第四步：核对输出</strong>，必须看到类似：</p>
+<pre class="code"><code>c001.js written, groups=5, metrics=8+5+4+10+5
+c002.js written, groups=5, metrics=6+6+6+5+3</code></pre>
+<p>组数或指标数不对 → 说明 JSON 写坏了，立刻回查。</p>
+<p><strong>第五步：浏览器打开</strong> <code>group\cases\index.html</code>，切到对应 Tab，肉眼确认表格出数。</p>
+<h3>线 B：每周方案复核（主诊医师 + 菲玛 AI 组）</h3>
+<p>每 7 天做一次，只看三件事：</p>
+<ol><li><strong>有没有新的诊断盲点需要补查</strong>（盲点清单里还有多少条是"待执行"）</li><li><strong>指标有没有越过安全线</strong>（超标 / 恶化 / 反弹）</li><li><strong>治疗阶梯该往下走还是该停一停</strong></li></ol>
+<p>产出：<strong>一页纸的周报</strong>，格式见第 5 节。</p>
+<h3>线 C：每月产品化沉淀（菲玛 + 维塔 + 瑞吉）</h3>
+<p>每月一次，把案例里积累的东西抽出来：</p>
+<ul><li>菲玛：哪类预测规则在真实数据上准 / 不准（→ 改进 AI 模型）</li><li>维塔：哪些副作用是被忽略的市场缺口（→ 抗衰 / 抗炎产品立项依据）</li><li>瑞吉：哪些结构与功能指标适合做类器官筛选终点（→ 研发管线依据）</li></ul>
+<hr>
+<h2>4. 指标填写规范（最容易出错的地方）</h2>
+<h3>4.1 五种取值，用词统一</h3>
+<table class="md-table"><thead><tr><th>写法</th><th>含义</th><th>什么时候用</th></tr></thead><tbody><tr><td><code>待测</code></td><td>该查了，但还没查</td><td>开了检查单，结果没回来</td></tr><tr><td><code>待填</code></td><td>还没安排 / 拿不到</td><td>患者暂时不做这项</td></tr><tr><td><code>待确认</code></td><td>有信息但不确定</td><td>药名、剂量、日期记不清</td></tr><tr><td><code>待算</code></td><td>需要计算得出</td><td>例如心血管 10 年风险分</td></tr><tr><td>具体数字</td><td>已有结果</td><td>填数值 + 单位</td></tr></tbody></table>
+<p>⚠️ <strong>禁止留空字符串</strong>。空字符串会让页面上出现空白格，看不出是"没做"还是"忘了填"。</p>
+<h3>4.2 <code>trend</code> 只允许三个值</h3>
+<ul><li><code>"up"</code> 上升 —— 指标在变差（注意：体重上升是好事，指标方向要按"是否接近目标"判断，不是看绝对方向）</li><li><code>"down"</code> 下降</li><li><code>"flat"</code> 持平</li></ul>
+<h3>4.3 <code>star: true</code> 是"关键指标"</h3>
+<p>只有满足这两条之一才打星：</p>
+<ol><li>这个指标决定方案走向（比如 C-001 的 IgG 决定能不能减激素）</li><li>这个指标是产品的核心卖点（比如 C-002 的"实际服药天数占比"直接证明依从性管理的产品价值）</li></ol>
+<p><strong>全案例星标指标控制在 8 个以内</strong>，否则等于没标。</p>
+<h3>4.4 目标值怎么写</h3>
+<p>写"临床公认的目标"，不要写"理想值"。例：</p>
+<ul><li>✅ <code>"&lt; 2.6（高危&lt;1.8，极高危&lt;1.4）"</code> —— 有分层，可执行</li><li>❌ <code>"越低越好"</code> —— 不可执行，医师没法判断达标没达标</li></ul>
+<hr>
+<h2>5. 周报模板（照抄这个格式，一页纸）</h2>
+<pre class="code"><code>案例编号：C-00X
+报告周期：YYYY-MM-DD ~ YYYY-MM-DD
+主责：XXX ｜ 协作：XXX ｜ 主诊医师：XXX
+
+【一、本周关键变化】（3 条以内，每条一行）
+1. 
+2. 
+3. 
+
+【二、指标异动】（只列越线或有趋势变化的）
+| 指标 | 上次 | 本次 | 目标 | 判断 | 处理 |
+|---|---|---|---|---|---|
+|      |      |      |      |      |      |
+
+【三、诊断盲点进度】
+本期待查：X 项 ｜ 已完成：X 项 ｜ 新增：X 项
+仍未解决（阻塞方案）：
+
+
+【四、方案建议】（给医师参考，不代替决策）
+建议 1：            触发条件：            风险：
+建议 2：            触发条件：            风险：
+
+【五、下期待办】
+□ 
+□ 
+
+【六、风险提示】
+（不良反应 / 依从性下滑 / 数据缺口 / 需要提前就医的情况）</code></pre>
+<hr>
+<h2>6. 三条红线（谁都不能碰）</h2>
+<h3>红线一：去标识化</h3>
+<p>公开版案例<strong>绝对不能出现</strong>：</p>
+<ul><li>❌ 姓名、住院号、门诊号、身份证号、手机号、住址</li><li>❌ 具体医院名称、科室全称、医生姓名</li><li>❌ 原始影像图、原始化验单照片（可识别）</li><li>❌ 精确到具体日期的病历节点（"2026-03-15 入院"这种要改成"约 1 年前"）</li></ul>
+<p>✅ 允许的粒度：<strong>编号、年龄段、性别、粗略病程、疾病大类</strong>。</p>
+<blockquote>如果董事长明确书面同意公开可识别信息，需另行记录授权范围（授权人、授权范围、有效期），存 <code>group/cases/</code> 下单独文件。</blockquote>
+<h3>红线二：AI 不开处方</h3>
+<p>所有 AI 输出、所有模板、所有周报，必须带这句：</p>
+<blockquote>本内容用于健康管理方法展示与研究分析，<strong>不构成医疗建议</strong>，所有诊疗决策由主治医师负责。</blockquote>
+<p><strong>不许出现</strong>："建议加量""建议停药""可以停激素了"这类祈使句。 <strong>只允许出现</strong>："若 X 指标持续 &gt; Y，则可与医师讨论 Z 方案"。</p>
+<h3>红线三：数据来源可追溯</h3>
+<p>每一个填进 <code>current</code> 的数字，必须能说清楚是哪天、哪个来源（哪次复查/哪份化验单/谁口述）。 <strong>说不出来源的数字不许填。</strong></p>
+<hr>
+<h2>7. 分工表</h2>
+<table class="md-table"><thead><tr><th>角色</th><th>负责什么</th><th>交付节奏</th></tr></thead><tbody><tr><td>菲玛科技 AI 平台组</td><td>数据归集与回填、盲点清单维护、周报汇总、AI 规则迭代</td><td>每周（线 A + B）</td></tr><tr><td>维塔生命临床前组</td><td>副作用与共病指标定义、产品化线索提炼</td><td>每月（线 C）</td></tr><tr><td>瑞吉再生类器官组</td><td>结构/功能类指标（影像、弹性、细胞学）对接</td><td>每月（线 C）</td></tr><tr><td>主诊医师</td><td>目标值设定、方案决策、指标解读</td><td>每次随访</td></tr><tr><td>总部（枢）</td><td>质量审核、隐私合规、对外发布把关</td><td>每月</td></tr></tbody></table>
+<p><strong>冲突回避</strong>：菲玛负责"判断"，维塔负责"研发产品"。涉及自家产品的指标，不得由维塔单独定义或单独解读结论。</p>
+<hr>
+<h2>8. 新增一个案例（完整流程，组长照做即可）</h2>
+<p><strong>第 1 步：复制模板</strong></p>
+<pre class="code"><code>group\cases\data\c001-core.json   →  c0xx-core.json
+group\cases\data\c001-m1.json     →  c0xx-m1.json
+group\cases\data\c001-m2.json     →  c0xx-m2.json
+group\cases\data\c001-path.json   →  c0xx-path.json</code></pre>
+<p><strong>第 2 步：改内容</strong></p>
+<ul><li><code>core</code>：<code>id</code> / <code>code</code> / <code>title</code> / <code>subtitle</code> / <code>updated</code> / <code>owner</code> / <code>support</code> / <code>tags</code> / <code>profile</code> / <code>summary</code> / <code>disclaimer</code> / <code>diagnostic_gaps</code></li><li><code>m1</code> / <code>m2</code>：<code>metric_groups</code> 数组，每个组 <code>{name, note, metrics:[...]}</code></li><li><code>path</code>：<code>pathway</code> / <code>timeline</code> / <code>followup</code> / <code>ai_role</code> / <code>notes</code></li></ul>
+<p><strong>第 3 步：注册</strong></p>
+<ol><li><code>group\cases\build.ps1</code> → <code>$ids = @('c001','c002')</code> 加上新 id</li><li><code>group\cases\app.js</code> → <code>var ORDER = ['c001','c002']</code> 加上新 id</li></ol>
+<p><strong>第 4 步：构建 + 验证</strong></p>
+<pre class="code"><code>powershell -NoProfile -ExecutionPolicy Bypass -File group\cases\build.ps1</code></pre>
+<p>看到 <code>c0xx.js written, groups=X, metrics=...</code> 即成功。</p>
+<p><strong>第 5 步：浏览器打开 <code>group\cases\index.html</code></strong>，确认新 Tab 出现、指标表有数。</p>
+<hr>
+<h2>9. 常见故障与排查</h2>
+<table class="md-table"><thead><tr><th>现象</th><th>原因</th><th>怎么办</th></tr></thead><tbody><tr><td>页面表格空白</td><td>没跑 <code>build.ps1</code>，或改了 JSON 没构建</td><td>重跑构建，刷新页面（Ctrl+F5）</td></tr><tr><td>页面出现"暂无数据"</td><td><code>app.js</code> 的 <code>ORDER</code> 里没加 id</td><td>补上 id</td></tr><tr><td>构建报 JSON 解析错误</td><td>JSON 里有中文全角符号、尾逗号、或括号不配对</td><td>逐个文件检查；建议用 VSCode 的 JSON 格式化验证</td></tr><tr><td>指标组多出一个空组</td><td><code>core</code> 里没有 <code>metric_groups</code> 字段</td><td>不用管（构建脚本已过滤）；若出现说明脚本被改过</td></tr><tr><td>浏览器改了没生效</td><td>缓存</td><td>Ctrl+F5 强制刷新</td></tr><tr><td>想删临时文件</td><td>工具会拦截删除命令</td><td>单独提一次删除请求让人工批准</td></tr></tbody></table>
+<hr>
+<h2>10. 附录：现有案例速查</h2>
+<table class="md-table"><thead><tr><th>编号</th><th>主题</th><th>主责</th><th>协作</th><th>状态</th></tr></thead><tbody><tr><td>C-001</td><td>自身免疫性肝病（激素减量与长期安全管理）</td><td>菲玛科技</td><td>维塔生命、瑞吉再生</td><td>跟踪中</td></tr><tr><td>C-002</td><td>高血脂长期跟踪与控制</td><td>菲玛科技</td><td>维塔生命</td><td>跟踪中</td></tr></tbody></table>
+<p><strong>C-001 当前最该补的三项</strong>（阻塞方案推进）：</p>
+<ol><li>免疫球蛋白 G（IgG）—— 不达标就不能减激素</li><li>肝脏硬度（FibroScan）+ 血小板 —— 决定纤维化分期与再生治疗介入时机</li><li>骨密度 T 值 —— 老年人长期用激素的账，必须有基线</li></ol>
+<p><strong>C-002 当前最该补的三项</strong>：</p>
+<ol><li>实际服药天数占比 —— 依从性是达标率的直接解释变量</li><li>10 年心血管风险分 —— 决定目标 LDL 定在哪</li><li>脂蛋白(a)（Lp(a)）—— 一次性检测，终生不变，漏了就永远不知道</li></ol>
+<hr>
+<p><em>本手册由普罗米修斯集团总部维护。修改前先读第 6 节红线。</em></p>
+</div>
+
+<footer>普罗米修斯集团 · 案例跟踪工作手册<br>内容不构成医疗建议，所有诊疗决策由主治医师负责。</footer>
+</body>
+</html>

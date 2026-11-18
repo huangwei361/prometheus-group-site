@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>普罗米修斯集团</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Microsoft YaHei',sans-serif;background:#0f1419;color:#e7e9ea;font-size:14px}
+h1{font-size:24px;letter-spacing:2px;text-align:center;padding:30px}
+.header{background:#1a1f29;padding:20px;text-align:center;border-bottom:1px solid #2f3336}
+.header h1{font-size:28px;color:#00d4aa;letter-spacing:4px}
+.header p{color:#71767b;margin-top:8px}
+.stats{display:flex;justify-content:center;gap:40px;padding:20px}
+.stat{text-align:center}
+.stat .n{font-size:32px;font-weight:bold;color:#00d4aa}
+.stat .l{font-size:12px;color:#71767b}
+.container{max-width:1200px;margin:0 auto;padding:20px}
+.company{background:#1a1f29;border-radius:12px;margin-bottom:20px}
+.c-header{padding:16px 20px;display:flex;align-items:center;border-bottom:1px solid #2f3336}
+.c-header.green{border-left:4px solid #00d4aa}
+.c-header.red{border-left:4px solid #f4212e}
+.c-header.purple{border-left:4px solid #794bc4}
+.c-name{font-size:18px;font-weight:bold}
+.c-name small{display:block;font-size:12px;color:#71767b;font-weight:normal}
+.c-tag{margin-left:auto;padding:4px 12px;border-radius:12px;font-size:12px}
+.green .c-tag{background:rgba(0,212,170,.2);color:#00d4aa}
+.red .c-tag{background:rgba(244,33,46,.2);color:#f4212e}
+.purple .c-tag{background:rgba(121,75,196,.2);color:#794bc4}
+.c-body{padding:16px 20px}
+.ceo{display:flex;align-items:center;gap:10px;padding:12px;background:#252d38;border-radius:8px;margin-bottom:16px}
+.ceo-b{background:#ffd400;color:#000;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:bold}
+.ceo-n{font-weight:bold}
+.ceo-r{margin-left:auto;color:#71767b;font-size:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
+.dept{background:#252d38;border-radius:8px;padding:14px}
+.dept h4{font-size:14px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #3f4449}
+.dept h4 span{float:right;color:#71767b;font-weight:normal;font-size:12px}
+.dept ul{list-style:none}
+.dept li{padding:4px 0;font-size:13px;border-bottom:1px dashed #3f4449;display:flex;justify-content:space-between}
+.dept li:last-child{border:none}
+.dept li span{color:#71767b}
+.milestone{margin-top:10px;padding-top:8px;border-top:1px solid #3f4449;font-size:11px}
+.milestone span{display:inline-block;padding:2px 8px;background:#1a1f29;border-radius:4px;margin:2px}
+.q1{border-left:2px solid #00d4aa}
+.q2{border-left:2px solid #1d9bf0}
+.q3{border-left:2px solid #794bc4}
+.q4{border-left:2px solid #f4212e}
+.products{background:#1a1f29;border-radius:12px;padding:20px;margin-top:20px}
+.products h2{font-size:18px;margin-bottom:16px;padding-bottom:12px;border-bottom:1px solid #2f3336}
+.p-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.p-card{background:#252d38;border-radius:8px;padding:16px;border-top:3px solid}
+.p-card.green{border-color:#00d4aa}
+.p-card.red{border-color:#f4212e}
+.p-card.purple{border-color:#794bc4}
+.p-card h3{font-size:16px}
+.p-card .co{font-size:11px;color:#71767b;margin-bottom:12px}
+.p-card .row{margin-bottom:6px;font-size:13px}
+.p-card .lb{color:#71767b;font-size:11px}
+footer{text-align:center;padding:30px;color:#71767b;font-size:12px}
+</style>
+</head>
+<body>
+
+<div class="header">
+<h1>PROMETHEUS</h1>
+<p>普罗米修斯集团 - 生命科技 - 2026</p>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="n">85</div><div class="l">总人数</div></div>
+<div class="stat"><div class="n">3</div><div class="l">子公司</div></div>
+<div class="stat"><div class="n">6</div><div class="l">集团高管</div></div>
+</div>
+
+<div class="container">
+
+<div class="company">
+<div class="c-header green">
+<div class="c-name">菲玛科技 PharmaX<small>AI驱动药物发现</small></div>
+<div class="c-tag">治愈一切疾病</div>
+</div>
+<div class="c-body">
+<div class="ceo">
+<div class="ceo-b">CEO</div>
+<div class="ceo-n">待招聘</div>
+<div class="ceo-r">整体战略 / 融资</div>
+</div>
+<div class="grid">
+<div class="dept">
+<h4>AI部 <span>7人</span></h4>
+<ul>
+<li>AI总监 <span>1人</span></li>
+<li>算法工程师 <span>2人</span></li>
+<li>计算生物学家 <span>2人</span></li>
+<li>数据工程师 <span>1人</span></li>
+</ul>
+<div class="milestone">
+<span class="q1">Q1 AI平台</span>
+<span class="q2">Q2 筛选</span>
+</div>
+</div>
+<div class="dept">
+<h4>药化部 <span>5人</span></h4>
+<ul>
+<li>药化负责人 <span>1人</span></li>
+<li>高级药化学家 <span>2人</span></li>
+<li>药化学家 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q1">Q1 合成</span>
+<span class="q2">Q2 SAR</span>
+<span class="q4">Q4 专利</span>
+</div>
+</div>
+<div class="dept">
+<h4>药理部 <span>4人</span></h4>
+<ul>
+<li>药理总监 <span>1人</span></li>
+<li>药理学家 <span>2人</span></li>
+<li>体内模型专家 <span>1人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 PDX</span>
+<span class="q3">Q3 药效</span>
+<span class="q4">Q4 GLP</span>
+</div>
+</div>
+<div class="dept">
+<h4>临床部 <span>7人</span></h4>
+<ul>
+<li>临床总监 <span>1人</span></li>
+<li>临床项目经理 <span>2人</span></li>
+<li>CRA <span>3人</span></li>
+<li>医学撰写 <span>1人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 CRO</span>
+<span class="q3">Q3 方案</span>
+<span class="q4">Q4 IND</span>
+</div>
+</div>
+<div class="dept">
+<h4>CMC部 <span>5人</span></h4>
+<ul>
+<li>CMC负责人 <span>1人</span></li>
+<li>制剂科学家 <span>2人</span></li>
+<li>分析科学家 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 处方</span>
+<span class="q3">Q3 放大</span>
+<span class="q4">Q4 资料</span>
+</div>
+</div>
+<div class="dept">
+<h4>BD+运营 <span>5人</span></h4>
+<ul>
+<li>BD总监 <span>1人</span></li>
+<li>BD经理 <span>2人</span></li>
+<li>财务 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q1">Q1 客户</span>
+<span class="q2">Q2 签约</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="company">
+<div class="c-header red">
+<div class="c-name">维塔生命 VitaCore<small>抗衰老化学疗法</small></div>
+<div class="c-tag">青春永驻</div>
+</div>
+<div class="c-body">
+<div class="ceo">
+<div class="ceo-b">CEO</div>
+<div class="ceo-n">待招聘</div>
+<div class="ceo-r">整体战略 / 融资</div>
+</div>
+<div class="grid">
+<div class="dept">
+<h4>抗衰老研究部 <span>7人</span></h4>
+<ul>
+<li>抗衰老负责人 <span>1人</span></li>
+<li>药理学家 <span>3人</span></li>
+<li>生化学家 <span>2人</span></li>
+<li>体内模型专家 <span>1人</span></li>
+</ul>
+<div class="milestone">
+<span class="q1">Senolytic</span>
+<span class="q1">端粒</span>
+<span class="q1">线粒体</span>
+</div>
+</div>
+<div class="dept">
+<h4>化学部 <span>5人</span></h4>
+<ul>
+<li>化学负责人 <span>1人</span></li>
+<li>高级化学家 <span>2人</span></li>
+<li>化学家 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 合成</span>
+<span class="q3">Q3 SAR</span>
+<span class="q4">Q4 专利</span>
+</div>
+</div>
+<div class="dept">
+<h4>AI/生信部 <span>3人</span></h4>
+<ul>
+<li>AI/生信负责人 <span>1人</span></li>
+<li>生物信息学家 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 分析</span>
+<span class="q3">Q3 模型</span>
+<span class="q4">Q4 数据库</span>
+</div>
+</div>
+<div class="dept">
+<h4>临床部 <span>5人</span></h4>
+<ul>
+<li>临床总监 <span>1人</span></li>
+<li>临床项目经理 <span>2人</span></li>
+<li>CRA <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q3">Q3 方案</span>
+<span class="q4">Q4 中心</span>
+</div>
+</div>
+<div class="dept">
+<h4>CMC+BD <span>5人</span></h4>
+<ul>
+<li>CMC/注册 <span>3人</span></li>
+<li>BD总监 <span>1人</span></li>
+<li>BD经理 <span>2人</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="company">
+<div class="c-header purple">
+<div class="c-name">瑞吉再生 RegenTech<small>再生医学 / 干细胞 / 基因编辑</small></div>
+<div class="c-tag">重塑新生</div>
+</div>
+<div class="c-body">
+<div class="ceo">
+<div class="ceo-b">CEO</div>
+<div class="ceo-n">待招聘</div>
+<div class="ceo-r">整体战略 / GMP</div>
+</div>
+<div class="grid">
+<div class="dept">
+<h4>iPSC部 <span>4人</span></h4>
+<ul>
+<li>iPSC负责人 <span>1人</span></li>
+<li>干细胞科学家 <span>3人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 建系</span>
+<span class="q3">Q3 DA神经元</span>
+<span class="q4">Q4 生产</span>
+</div>
+</div>
+<div class="dept">
+<h4>基因编辑部 <span>3人</span></h4>
+<ul>
+<li>基因编辑负责人 <span>1人</span></li>
+<li>CRISPR科学家 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 系统</span>
+<span class="q2">Q2 gRNA</span>
+<span class="q3">Q3 脱靶</span>
+</div>
+</div>
+<div class="dept">
+<h4>生物材料部 <span>3人</span></h4>
+<ul>
+<li>生物材料负责人 <span>1人</span></li>
+<li>生物材料科学家 <span>2人</span></li>
+</ul>
+<div class="milestone">
+<span class="q2">Q2 筛选</span>
+<span class="q3">Q3 3D打印</span>
+<span class="q4">Q4 血管化</span>
+</div>
+</div>
+<div class="dept">
+<h4>GMP生产部 <span>12人</span></h4>
+<ul>
+<li>GMP生产总监 <span>1人</span></li>
+<li>QA <span>3人</span></li>
+<li>QC <span>4人</span></li>
+<li>生产 <span>4人</span></li>
+</ul>
+<div class="milestone">
+<span class="q1">Q1 建设</span>
+<span class="q3">Q3 建成</span>
+<span class="q4">Q4 生产</span>
+</div>
+</div>
+<div class="dept">
+<h4>临床+运营 <span>8人</span></h4>
+<ul>
+<li>医学总监 <span>1人</span></li>
+<li>临床项目经理 <span>2人</span></li>
+<li>CRA <span>2人</span></li>
+<li>BD <span>3人</span></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div class="products">
+<h2>首批产品管线</h2>
+<div class="p-grid">
+<div class="p-card green">
+<h3>PMX-001</h3>
+<div class="co">菲玛科技</div>
+<div class="row"><div class="lb">适应症</div>非小细胞肺癌</div>
+<div class="row"><div class="lb">靶点</div>EGFR</div>
+<div class="row"><div class="lb">技术</div>AI药物发现</div>
+<div class="row"><div class="lb">阶段</div>Q4 IND申报</div>
+</div>
+<div class="p-card red">
+<h3>VC-001</h3>
+<div class="co">维塔生命</div>
+<div class="row"><div class="lb">适应症</div>骨关节炎</div>
+<div class="row"><div class="lb">机制</div>Senolytic</div>
+<div class="row"><div class="lb">技术</div>D+Q联用</div>
+<div class="row"><div class="lb">阶段</div>Q4 IND申报</div>
+</div>
+<div class="p-card purple">
+<h3>RT-001</h3>
+<div class="co">瑞吉再生</div>
+<div class="row"><div class="lb">适应症</div>帕金森病</div>
+<div class="row"><div class="lb">技术</div>iPSC+基因编辑</div>
+<div class="row"><div class="lb">治疗</div>DA神经元移植</div>
+<div class="row"><div class="lb">阶段</div>Q4 IND申报</div>
+</div>
+</div>
+</div>
+
+<footer>
+<p>PROMETHEUS 普罗米修斯集团 - 2026</p>
+<p>治愈疾病 / 青春永驻 / 重塑新生</p>
+</footer>
+
+</body>
+</html>

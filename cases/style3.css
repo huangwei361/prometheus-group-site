@@ -1,0 +1,46 @@
+/* pathway */
+.stage{display:flex;gap:16px;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+.stage .num{flex:0 0 78px;font-size:.82em;color:var(--p3);font-weight:600;padding-top:2px}
+.stage .body{flex:1}
+.stage .pl{font-size:.92em;margin-bottom:5px}
+.stage .tr{font-size:.82em;color:var(--tx2)}
+.stage .ow{font-size:.78em;color:var(--acc);margin-top:4px}
+
+/* timeline */
+.tl{position:relative;padding-left:26px}
+.tl::before{content:'';position:absolute;left:6px;top:6px;bottom:6px;width:1px;background:var(--line)}
+.tl-item{position:relative;padding:0 0 20px}
+.tl-item::before{content:'';position:absolute;left:-24px;top:8px;width:9px;height:9px;border-radius:50%;
+  background:var(--p1);box-shadow:0 0 0 3px rgba(168,85,247,.15)}
+.tl-date{font-size:.75em;color:var(--p3);letter-spacing:1px}
+.tl-title{font-weight:600;font-size:.95em;margin:2px 0 3px}
+.tl-detail{font-size:.86em;color:var(--tx2)}
+
+/* followup */
+.fu{width:100%;border-collapse:collapse;font-size:.87em}
+.fu th{text-align:left;color:var(--p3);padding:9px 8px;border-bottom:1px solid var(--line)}
+.fu td{padding:9px 8px;border-bottom:1px solid rgba(255,255,255,.05);color:var(--tx2)}
+.fu td:first-child{color:var(--tx)}
+
+/* ai role */
+.ai{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.ai-i{background:rgba(56,189,248,.05);border:1px solid rgba(56,189,248,.18);border-radius:10px;padding:15px}
+.ai-i .h{font-size:.9em;font-weight:600;color:var(--acc);margin-bottom:5px}
+.ai-i .d{font-size:.84em;color:var(--tx2)}
+
+h2.sec{font-size:1.15em;margin:34px 0 14px;padding-left:12px;border-left:3px solid var(--p1)}
+.sec-t{color:var(--tx2);font-size:.85em;margin:-8px 0 14px}
+/* trend variants for lab values (low is not "good") */
+.trend.low{color:var(--warn);background:rgba(251,191,36,.12)}
+
+/* gap / finding status chips */
+.chip.st-ok{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25);color:var(--ok)}
+.chip.st-doing{background:rgba(251,191,36,.1);border-color:rgba(251,191,36,.28);color:var(--warn)}
+.chip.st-todo{background:rgba(255,255,255,.05);border-color:rgba(255,255,255,.12);color:var(--tx2)}
+
+/* findings block */
+.gap .wy strong{color:var(--tx)}
+
+footer{margin-top:60px;padding:30px 0 50px;border-top:1px solid var(--line);text-align:center;color:var(--tx2);font-size:.8em}
+.back{display:inline-block;margin-bottom:20px;color:var(--p3);text-decoration:none;font-size:.85em}
+.back:hover{color:var(--p1)}

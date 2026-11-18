@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>普罗米修斯集团 2026年工作计划</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Microsoft YaHei,sans-serif;background:#f8f9fa;color:#212529;font-size:14px;line-height:1.7}
+.header{background:#1a365d;color:#fff;padding:25px;text-align:center}
+.header h1{font-size:24px}
+.header p{color:#a0aec0;margin-top:5px}
+.nav{display:flex;justify-content:center;gap:5px;padding:12px;background:#fff;box-shadow:0 2px 8px rgba(0,0,0,0.08);flex-wrap:wrap}
+.nav button{padding:8px 16px;border:2px solid #e2e8f0;border-radius:6px;background:#fff;color:#4a5568;cursor:pointer;font-size:13px}
+.nav button.active{background:#1a365d;color:#fff;border-color:#1a365d}
+.container{max-width:1400px;margin:15px auto;padding:0 15px}
+.tab{display:none}
+.tab.active{display:block}
+.months{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+@media(max-width:1100px){.months{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:800px){.months{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){.months{grid-template-columns:1fr}}
+.month{background:#fff;border-radius:8px;padding:14px;box-shadow:0 1px 4px rgba(0,0,0,0.06);border-top:3px solid}
+.jan{border-color:#38a169}.feb{border-color:#2b6cb0}.mar{border-color:#3182ce}.apr{border-color:#805ad5}.may{border-color:#d69e2e}.jun{border-color:#e53e3e}.jul{border-color:#38a169}.aug{border-color:#2b6cb0}.sep{border-color:#3182ce}.oct{border-color:#805ad5}.nov{border-color:#d69e2e}.dec{border-color:#e53e3e}
+.month h3{font-size:15px;color:#1a365d;padding-bottom:8px;border-bottom:1px solid #e2e8f0;margin-bottom:10px}
+.team{margin-bottom:10px}
+.team h4{font-size:13px;color:#2d3748;margin-bottom:5px}
+.team ul{list-style:none;font-size:12px;color:#4a5568}
+.team li{padding:2px 0;padding-left:10px;position:relative}
+.team li:before{content:"▸";position:absolute;left:0;color:#4fd1c5;font-size:10px}
+.step{margin-top:6px;padding:6px;background:#f7fafc;border-radius:4px;font-size:11px;color:#718096}
+.step b{color:#2b6cb0}
+.check-page{background:#fff;padding:20px;border-radius:8px;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.check-page h2{font-size:20px;color:#1a365d;padding-bottom:12px;border-bottom:2px solid #4fd1c5;margin-bottom:15px}
+.check-item{display:flex;align-items:center;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px}
+.check-item input{width:16px;height:16px;margin-right:10px}
+.check-item .txt{flex:1}
+.tag{padding:2px 6px;border-radius:3px;font-size:10px;margin-left:5px}
+.pharmax{background:#e6fffa;color:#234e52}
+.vitacore{background:#faf5ff;color:#44337a}
+.regentech{background:#fff5f5;color:#c53030}
+</style>
+</head>
+<body>
+<div class="header">
+<h1>PROMETHEUS 普罗米修斯集团</h1>
+<p>2026年度工作计划 - 每月每周做什么、怎么做</p>
+</div>
+<div class="nav">
+<button class="active" onclick="showTab('pharmax')">菲玛科技</button>
+<button onclick="showTab('vitacore')">维塔生命</button>
+<button onclick="showTab('regentech')">瑞吉再生</button>
+<button onclick="showTab('check')">执行清单</button>
+</div>
+<div class="container">
+
+<!-- 菲玛科技 -->
+<div class="tab active" id="pharmax">
+<div style="margin-bottom:20px">
+<h2 style="font-size:18px;color:#1a365d;padding:12px 0;border-bottom:2px solid #4fd1c5;margin-bottom:15px">菲玛科技 PharmaX <small style="font-size:12px;color:#718096;font-weight:normal">| 非小细胞肺癌 | EGFR | PMX-001</small></h2>
+<div class="months">
+
+<div class="month jan">
+<h3>1月 第1-4周</h3>
+<div class="team">
+<h4>AI总监</h4>
+<ul>
+<li>安装NVIDIA A100 GPU服务器</li>
+<li>部署AlphaFold2预测EGFR蛋白</li>
+<li>设置Docker容器环境</li>
+</ul>
+<div class="step"><b>步骤：</b>1.Ubuntu 22.04 2.CUDA 12.0 3.AlphaFold推理</div>
+</div>
+<div class="team">
+<h4>药化负责人</h4>
+<ul>
+<li>SciFinder搜索EGFR抑制剂路线</li>
+<li>确定Suzuki偶联方案</li>
+<li>订购：4-溴苯硼酸、钯催化剂</li>
+</ul>
+<div class="step"><b>原料：</b>Ar-Br + Ar-B(OH)2 → Pd(dppf)Cl2</div>
+</div>
+</div>
+
+<div class="month feb">
+<h3>2月 第5-8周</h3>
+<div class="team">
+<h4>AI团队（3人）</h4>
+<ul>
+<li>TCGA下载肺癌RNA-seq数据</li>
+<li>MolGPT生成1000个候选分子</li>
+<li>AutoDock Vina分子对接</li>
+<li>筛选top100（分数<-9 kcal/mol）</li>
+</ul>
+<div class="step"><b>参数：</b>对接盒子60×60×60Å / Exhaustiveness=32</div>
+</div>
+<div class="team">
+<h4>药化学家</h4>
+<ul>
+<li>合成PMX-001至PMX-005</li>
+<li>Suzuki偶联：100℃搅拌2h</li>
+<li>硅胶柱层析纯化</li>
+</ul>
+<div class="step"><b>反应：</b>K3PO4/THF/100℃/2h</div>
+</div>
+</div>
+
+<div class="month mar">
+<h3>3月 第9-12周</h3>
+<div class="team">
+<h4>药化学家（5人）</h4>
+<ul>
+<li>合成PMX-006至PMX-015</li>
+<li>HPLC检测纯度（254nm）</li>
+<li>NMR确证结构</li>
+<li>MS确认分子量</li>
+</ul>
+<div class="step"><b>标准：</b>纯度≥95% / NMR匹配 / MS(M+1)</div>
+</div>
+<div class="team">
+<h4>AI团队</h4>
+<ul>
+<li>SwissADME预测ADMET</li>
+<li>筛选：Lipinski五规则</li>
+<li>选出10个最优化合物</li>
+</ul>
+<div class="step"><b>规则：</b>MW<500 / LogP<5 / HBD≤5</div>
+</div>
+</div>
+
+<div class="month apr">
+<h3>4月 第13-16周</h3>
+<div class="team">
+<h4>药化学家（4人）</h4>
+<ul>
+<li>合成20个衍生物</li>
+<li>改变R1、R2基团</li>
+<li>SAR构效关系分析</li>
+</ul>
+<div class="step"><b>策略：</b>卤代烃变化 / 哌嗪→吗啉 / F→Cl→Br</div>
+</div>
+<div class="team">
+<h4>AI团队</h4>
+<ul>
+<li>DeepChem训练ADMET模型</li>
+<li>预测10个衍生物IC50</li>
+<li>选出3个最优化合物</li>
+</ul>
+<div class="step"><b>模型：</b>GCN神经网络 / 5折交叉验证</div>
+</div>
+</div>
+
+<div class="month may">
+<h3>5月 第17-20周</h3>
+<div class="team">
+<h4>药理学家（4人）</h4>
+<ul>
+<li>复苏PC9肺癌细胞</li>
+<li>96孔板接种（5000细胞/孔）</li>
+<li>MTT法测IC50（0.01nM-10μM）</li>
+<li>WB检测p-EGFR(Tyr1068)</li>
+</ul>
+<div class="step"><b>MTT：</b>72h孵育 → MTT 4h → DMSO → 570nm</div>
+</div>
+<div class="team">
+<h4>药理学家</h4>
+<ul>
+<li>准备PDX肿瘤组织</li>
+<li>接种NOD/SCID小鼠皮下</li>
+</ul>
+<div class="step"><b>建模：</b>5×5mm肿瘤块 / 雌性 6-8周龄</div>
+</div>
+</div>
+
+<div class="month jun">
+<h3>6月 第21-24周</h3>
+<div class="team">
+<h4>药理团队</h4>
+<ul>
+<li>确定候选化合物PMX-001</li>
+<li>PDX模型给药方案</li>
+<li>剂量：10/30/100mg/kg</li>
+</ul>
+<div class="step"><b>方案：</b>口服每天1次 / 21天 / 每3天测量</div>
+</div>
+<div class="team">
+<h4>临床团队</h4>
+<ul>
+<li>撰写IND资料框架</li>
+<li>整理CMC资料</li>
+</ul>
+<div class="step"><b>eCTD：</b>模块2/3/4</div>
+</div>
+</div>
+
+<div class="month jul">
+<h3>7月 第25-28周</h3>
+<div class="team">
+<h4>药理团队</h4>
+<ul>
+<li>PDX模型给药</li>
+<li>卡尺测量肿瘤</li>
+<li>绘制抑瘤曲线</li>
+<li>T/C<40%为有效</li>
+</ul>
+<div class="step"><b>计算：</b>长×宽²/2 / T/C(%)</div>
+</div>
+<div class="team">
+<h4>毒理科学家</h4>
+<ul>
+<li>签约GLP毒理CRO</li>
+<li>14天重复给药</li>
+<li>剂量：0/10/30/100mg/kg</li>
+</ul>
+<div class="step"><b>GLP：</b>SD大鼠20只/组 / 性别各半</div>
+</div>
+</div>
+
+<div class="month aug">
+<h3>8月 第29-32周</h3>
+<div class="team">
+<h4>药代动力学（2人）</h4>
+<ul>
+<li>大鼠PK：iv 5mg/kg + oral 30mg/kg</li>
+<li>LC-MS/MS测定血药浓度</li>
+<li>采血：0.083-24h</li>
+</ul>
+<div class="step"><b>计算：</b>AUC/Cmax/Tmax/t1/2/F</div>
+</div>
+<div class="team">
+<h4>GLP毒理</h4>
+<ul>
+<li>给药14天</li>
+<li>血常规、生化、脏器病理</li>
+</ul>
+<div class="step"><b>指标：</b>WBC/RBC/ALT/AST/肝肾</div>
+</div>
+</div>
+
+<div class="month sep">
+<h3>9月 第33-36周</h3>
+<div class="team">
+<h4>CMC团队（4人）</h4>
+<ul>
+<li>确定晶型Form I</li>
+<li>XRD确定无水晶型</li>
+<li>DSC测定熔点</li>
+<li>制剂处方</li>
+</ul>
+<div class="step"><b>处方：</b>API 10% / MCC 80% / PVP 5%</div>
+</div>
+<div class="team">
+<h4>临床团队</h4>
+<ul>
+<li>完成IND资料</li>
+<li>eCTD格式整理</li>
+<li>提交CDE</li>
+</ul>
+<div class="step"><b>资料：</b>CMC/药理/毒理/临床方案</div>
+</div>
+</div>
+
+<div class="month oct">
+<h3>10月 第37-40周</h3>
+<div class="team">
+<h4>CMC团队</h4>
+<ul>
+<li>公斤级放大工艺</li>
+<li>10L反应釜Suzuki偶联</li>
+<li>结晶条件优化</li>
+<li>3批生产验证</li>
+</ul>
+<div class="step"><b>放大：</b>100g→1kg / 温度/搅拌优化</div>
+</div>
+<div class="team">
+<h4>稳定性研究</h4>
+<ul>
+<li>加速：40℃/75%RH 6月</li>
+<li>长期：25℃/60%RH 6月</li>
+</ul>
+<div class="step"><b>标准：</b>含量≥95% / 有关物质≤0.5%</div>
+</div>
+</div>
+
+<div class="month nov">
+<h3>11月 第41-44周</h3>
+<div class="team">
+<h4>IND审评</h4>
+<ul>
+<li>配合CDE审评</li>
+<li>回复补充资料</li>
+<li>现场核查</li>
+</ul>
+<div class="step"><b>目标：</b>获得IND批件</div>
+</div>
+<div class="team">
+<h4>临床准备</h4>
+<ul>
+<li>选定临床机构</li>
+<li>筛选PI</li>
+<li>签署协议</li>
+</ul>
+<div class="step"><b>方案：</b>单臂/开放/晚期NSCLC</div>
+</div>
+</div>
+
+<div class="month dec">
+<h3>12月 第45-52周</h3>
+<div class="team">
+<h4>IND获批</h4>
+<ul>
+<li>获得CDE批件</li>
+<li>临床登记(CTR)</li>
+<li>启动临床I期</li>
+</ul>
+<div class="step"><b>里程碑：</b>PMX-001 IND获批 ✅</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- 维塔生命 -->
+<div class="tab" id="vitacore">
+<div style="margin-bottom:20px">
+<h2 style="font-size:18px;color:#1a365d;padding:12px 0;border-bottom:2px solid #4fd1c5;margin-bottom:15px">维塔生命 VitaCore <small style="font-size:12px;color:#718096;font-weight:normal">| 抗衰老 | 两个方向并行</small></h2>
+<div style="background:#f0fff4;border-radius:8px;padding:15px;margin-bottom:15px">
+<h3 style="font-size:15px;color:#276749;margin-bottom:10px">两个小组并行</h3>
+<div style="display:flex;gap:20px;flex-wrap:wrap">
+<div style="flex:1;min-width:200px">
+<h4 style="font-size:13px;color:#276749">Senolytic组</h4>
+<p style="font-size:12px;color:#666">达沙替尼+槲皮素纳米制剂<br>目标：3-5年上市</p>
+</div>
+<div style="flex:1;min-width:200px">
+<h4 style="font-size:13px;color:#276749">AI蛋白组</h4>
+<p style="font-size:12px;color:#666">Genesis Quant AI设计免疫蛋白<br>目标：5-10年更精准</p>
+</div>
+</div>
+</div>
+<div class="months">
+
+<div class="month jan">
+<h3>1月 第1-4周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>检索Senolytic文献</li>
+<li>购买FDA药物库(Selleckchem)</li>
+<li>购买达沙替尼+槲皮素原料</li>
+</ul>
+<div class="step"><b>目标：</b>确认D+Q联用方案</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>组建AI算法团队</li>
+<li>收集细胞表面蛋白数据</li>
+<li>设计Genesis Quant框架</li>
+</ul>
+<div class="step"><b>目标：</b>AI模型搭建</div>
+</div>
+</div>
+
+<div class="month feb">
+<h3>2月 第5-8周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>建立衰老细胞模型(IMR-90)</li>
+<li>SA-β-Gal染色验证</li>
+<li>测试D+Q联用效果</li>
+</ul>
+<div class="step"><b>验证：</b>衰老标记物 p16↑</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>训练Genesis Quant模型</li>
+<li>分析蛋白折叠规律</li>
+<li>分析受体展示规律</li>
+</ul>
+<div class="step"><b>数据：</b>海量细胞实验数据</div>
+</div>
+</div>
+
+<div class="month mar">
+<h3>3月 第9-12周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>初筛化合物库</li>
+<li>验证D+Q最佳配比</li>
+<li>纳米槲皮素方案确定</li>
+</ul>
+<div class="step"><b>配比：</b>达沙替尼100nM+槲皮素10μM</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>AI设计全新蛋白序列</li>
+<li>生成7组候选蛋白</li>
+<li>预测蛋白结构</li>
+</ul>
+<div class="step"><b>模型：</b>AlphaFold辅助</div>
+</div>
+</div>
+
+<div class="month apr">
+<h3>4月 第13-16周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>纳米制剂开发</li>
+<li>选择纳米载体技术</li>
+<li>与CRO合作制剂</li>
+</ul>
+<div class="step"><b>技术：</b>纳米粒/固体分散体</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>合成AI设计的蛋白序列</li>
+<li>纯化蛋白</li>
+<li>功能验证</li>
+</ul>
+<div class="step"><b>验证：</b>受体表达↑</div>
+</div>
+</div>
+
+<div class="month may">
+<h3>5月 第17-20周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>纳米槲皮素配方优化</li>
+<li>动物实验验证效果</li>
+<li>测定生物利用度</li>
+</ul>
+<div class="step"><b>对比：</b>普通vs纳米吸收率</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>将蛋白搭载到免疫细胞</li>
+<li>验证识别衰老细胞能力</li>
+<li>对比天然vs AI设计</li>
+</ul>
+<div class="step"><b>目标：</b>AI蛋白碾压天然序列</div>
+</div>
+</div>
+
+<div class="month jun">
+<h3>6月 第21-24周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>骨关节炎动物模型</li>
+<li>关节腔注射VC-001</li>
+<li>观察关节改善</li>
+</ul>
+<div class="step"><b>模型：</b>MOLF/lpr小鼠</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>测试续航时间</li>
+<li>测试抗疲劳能力</li>
+<li>对比效果</li>
+</ul>
+<div class="step"><b>目标：</b>解决"认不准、易疲惫"</div>
+</div>
+</div>
+
+<div class="month jul">
+<h3>7月 第25-28周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>继续动物实验</li>
+<li>Micro-CT扫描关节</li>
+<li>取组织做病理</li>
+</ul>
+<div class="step"><b>指标：</b>骨侵蚀/软骨</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>全身衰老细胞清除实验</li>
+<li>验证慢性炎症改善</li>
+<li>长期安全性评估</li>
+</ul>
+<div class="step"><b>目标：</b>全身系统有效</div>
+</div>
+</div>
+
+<div class="month aug">
+<h3>8月 第29-32周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>GLP毒理实验启动</li>
+<li>28天给药安全性</li>
+<li>数据整理</li>
+</ul>
+<div class="step"><b>GLP：</b>签约CRO</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>申请专利保护</li>
+<li>论文发表</li>
+<li>技术验证</li>
+</ul>
+<div class="step"><b>目标：</b>知识产权保护</div>
+</div>
+</div>
+
+<div class="month sep">
+<h3>9月 第33-36周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>GLP毒理继续</li>
+<li>整理临床前数据</li>
+<li>撰写IND资料</li>
+</ul>
+<div class="step"><b>目标：</b>IND申报准备</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>优化蛋白序列</li>
+<li>准备下一步临床前</li>
+<li>寻找合作伙伴</li>
+</ul>
+<div class="step"><b>目标：</b>长期推进</div>
+</div>
+</div>
+
+<div class="month oct">
+<h3>10月 第37-40周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>IND申报提交</li>
+<li>工艺验证</li>
+<li>稳定性考察</li>
+</ul>
+<div class="step"><b>目标：</b>IND获批</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>准备IND资料</li>
+<li>规划临床方案</li>
+</ul>
+<div class="step"><b>目标：</b>2027年申报</div>
+</div>
+</div>
+
+<div class="month nov">
+<h3>11月 第41-44周</h3>
+<div class="team" style="border-left:3px solid #38a169;padding-left:10px">
+<h4>Senolytic组</h4>
+<ul>
+<li>IND获批</li>
+<li>选定临床机构</li>
+<li>启动临床I期</li>
+</ul>
+<div class="step"><b>里程碑：</b>进入临床 ✅</div>
+</div>
+<div class="team" style="border-left:3px solid #805ad5;padding-left:10px">
+<h4>AI蛋白组</h4>
+<ul>
+<li>继续研发</li>
+<li>扩大团队</li>
+</ul>
+<div class="step"><b>目标：</b>持续推进</div>
+</div>
+</div>
+
+<div class="month dec">
+<h3>12月 第45-52周</h3>
+<div class="team">
+<h4>IND获批</h4>
+<ul>
+<li>IND获批</li>
+<li>启动临床方案</li>
+</ul>
+<div class="step"><b>里程碑：</b>VC-001 IND获批 ✅</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- 瑞吉再生 -->
+<div class="tab" id="regentech">
+<div style="margin-bottom:20px">
+<h2 style="font-size:18px;color:#1a365d;padding:12px 0;border-bottom:2px solid #4fd1c5;margin-bottom:15px">瑞吉再生 RegenTech <small style="font-size:12px;color:#718096;font-weight:normal">| 帕金森病 | iPSC+CRISPR | RT-001</small></h2>
+<div class="months">
+
+<div class="month jan">
+<h3>1月 第1-4周</h3>
+<div class="team">
+<h4>iPSC负责人</h4>
+<ul>
+<li>采购mTeSR Plus培养基</li>
+<li>采购Matrigel</li>
+<li>采购Accutase</li>
+</ul>
+<div class="step"><b>试剂：</b>Gibco / STEMCELL</div>
+</div>
+<div class="team">
+<h4>实验室准备</h4>
+<ul>
+<li>设置B级洁净培养间</li>
+<li>CO2培养箱37℃/5%CO2</li>
+</ul>
+<div class="step"><b>包被：</b>Matrigel 1:30稀释</div>
+</div>
+</div>
+
+<div class="month feb">
+<h3>2月 第5-8周</h3>
+<div class="team">
+<h4>干细胞科学家（4人）</h4>
+<ul>
+<li>采集外周血50ml</li>
+<li>Ficoll密度梯度离心</li>
+<li>收集PBMC</li>
+</ul>
+<div class="step"><b>离心：</b>800g/20min</div>
+</div>
+<div class="team">
+<h4>基因编辑负责人</h4>
+<ul>
+<li>构建Cas9质粒</li>
+<li>设计gRNA</li>
+</ul>
+<div class="step"><b>gRNA：</b>CRISPOR</div>
+</div>
+</div>
+
+<div class="month mar">
+<h3>3月 第9-12周</h3>
+<div class="team">
+<h4>干细胞科学家</h4>
+<ul>
+<li>Epismart重编程</li>
+<li>第14-21天出现克隆</li>
+<li>STR分型</li>
+</ul>
+<div class="step"><b>克隆：</b>MEF饲养层</div>
+</div>
+</div>
+
+<div class="month apr">
+<h3>4月 第13-16周</h3>
+<div class="team">
+<h4>干细胞团队</h4>
+<ul>
+<li>iPSC传代至P5</li>
+<li>核型分析</li>
+<li>支原体检测</li>
+</ul>
+<div class="step"><b>核型：</b>46,XX或46,XY</div>
+</div>
+<div class="team">
+<h4>分化团队</h4>
+<ul>
+<li>SB431542+LDN诱导NSC</li>
+<li>悬浮培养神经球</li>
+</ul>
+<div class="step"><b>标记：</b>Nestin+>90%</div>
+</div>
+</div>
+
+<div class="month may">
+<h3>5月 第17-20周</h3>
+<div class="team">
+<h4>分化团队</h4>
+<ul>
+<li>SHH+FGF8诱导DA神经元</li>
+<li>第21天TH+阳性</li>
+<li>电生理检测</li>
+</ul>
+<div class="step"><b>鉴定：</b>TH免疫荧光</div>
+</div>
+<div class="team">
+<h4>GMP团队</h4>
+<ul>
+<li>B级洁净区装修</li>
+</ul>
+<div class="step"><b>洁净：</b>B级</div>
+</div>
+</div>
+
+<div class="month jun">
+<h3>6月 第21-24周</h3>
+<div class="team">
+<h4>CRISPR团队</h4>
+<ul>
+<li>电转Cas9/sgRNA</li>
+<li>T7E1检测编辑效率</li>
+<li>脱靶检测</li>
+</ul>
+<div class="step"><b>标准：</b>脱靶<0.1%</div>
+</div>
+</div>
+
+<div class="month jul">
+<h3>7月 第25-28周</h3>
+<div class="team">
+<h4>分化团队</h4>
+<ul>
+<li>扩大DA神经元生产</li>
+<li>批量检测</li>
+<li>流式TH+>80%</li>
+</ul>
+<div class="step"><b>分选：</b>FACS Aria</div>
+</div>
+<div class="team">
+<h4>GMP生产</h4>
+<ul>
+<li>GMP扩增iPSC</li>
+<li>GMP分化</li>
+</ul>
+<div class="step"><b>质控：</b>活率>80%</div>
+</div>
+</div>
+
+<div class="month aug">
+<h3>8月 第29-32周</h3>
+<div class="team">
+<h4>GMP生产</h4>
+<ul>
+<li>制剂分装(10⁸细胞/支)</li>
+<li>冻存液氮保存</li>
+</ul>
+<div class="step"><b>制剂：</b>静脉注射</div>
+</div>
+<div class="team">
+<h4>QA团队</h4>
+<ul>
+<li>内毒素检测</li>
+<li>无菌检测</li>
+</ul>
+<div class="step"><b>LAL：</b><0.5EU/ml</div>
+</div>
+</div>
+
+<div class="month sep">
+<h3>9月 第33-36周</h3>
+<div class="team">
+<h4>CMC团队</h4>
+<ul>
+<li>整理药学研究</li>
+<li>生产工艺验证</li>
+<li>质量标准</li>
+</ul>
+<div class="step"><b>标准：</b>外观/活率/纯度</div>
+</div>
+<div class="team">
+<h4>临床前研究</h4>
+<ul>
+<li>帕金森猴模型(MPTP)</li>
+<li>立体定向移植</li>
+</ul>
+<div class="step"><b>模型：</b>食蟹猴</div>
+</div>
+</div>
+
+<div class="month oct">
+<h3>10月 第37-40周</h3>
+<div class="team">
+<h4>临床前团队</h4>
+<ul>
+<li>PET-CT检测DAT</li>
+<li>行为学评估(UPDRS)</li>
+<li>黑质TH+计数</li>
+</ul>
+<div class="step"><b>PET：</b>DAT恢复>30%</div>
+</div>
+</div>
+
+<div class="month nov">
+<h3>11月 第41-44周</h3>
+<div class="team">
+<h4>IND申报</h4>
+<ul>
+<li>撰写IND资料</li>
+<li>提交CDE</li>
+</ul>
+<div class="step"><b>格式：</b>eCTD</div>
+</div>
+</div>
+
+<div class="month dec">
+<h3>12月 第45-52周</h3>
+<div class="team">
+<h4>IND获批</h4>
+<ul>
+<li>IND获批</li>
+<li>启动临床方案</li>
+</ul>
+<div class="step"><b>里程碑：</b>RT-001 IND获批 ✅</div>
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<!-- 执行清单 -->
+<div class="tab" id="check">
+<div class="check-page">
+<h2>2026年度执行清单</h2>
+
+<div style="font-size:13px;color:#666;margin-bottom:15px">点击勾选完成状态</div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">1月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">安装GPU服务器，部署AlphaFold2</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">采购化学试剂原料</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">采购干细胞试剂</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">购买FDA药物库</span><span class="tag vitacore">维塔</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">2月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">TCGA数据收集，MolGPT生成1000个分子</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">Ficoll分离PBMC</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">建立SA-β-Gal衰老染色</span><span class="tag vitacore">维塔</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">3月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">合成15个化合物，HPLC/NMR</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">初筛2000个化合物</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">iPSC重编程建系</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">ADMET预测</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">4月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">合成20个衍生物，SAR分析</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">STR分型鉴定</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">复筛阳性化合物</span><span class="tag vitacore">维塔</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">5月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">MTT法测IC50</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">WB检测EGFR磷酸化</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">DA神经元诱导</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">GMP车间建设</span><span class="tag regentech">瑞吉</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">6月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">建立PDX模型</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">确定候选PMX-001</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">电转CRISPR，编辑检测</span><span class="tag regentech">瑞吉</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">7月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">PDX模型给药</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">签约GLP毒理CRO</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">狼疮小鼠关节炎模型</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">扩大DA神经元生产</span><span class="tag regentech">瑞吉</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">8月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">大鼠PK研究</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">14天GLP毒理</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">Micro-CT扫描关节</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">GMP生产</span><span class="tag regentech">瑞吉</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">9月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">撰写IND资料</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">28天GLP毒理</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">GMP完成，QA放行</span><span class="tag regentech">瑞吉</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">10月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">PMX-001 IND提交</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">工艺放大公斤级</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+
+
+
+</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND提交</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">帕金森猴PET-CT</span><span class="tag regentech">瑞吉</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">11月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND提交</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">PMX-001 IND获批</span><span class="tag pharmax">菲玛</span></div>
+
+<div style="margin-top:15px;font-weight:bold;color:#1a365d;border-top:2px solid #e2e8f0;padding-top:10px">12月</div>
+<div class="check-item"><input type="checkbox"><span class="txt">VC-001 IND获批</span><span class="tag vitacore">维塔</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">RT-001 IND获批</span><span class="tag regentech">瑞吉</span></div>
+<div class="check-item"><input type="checkbox"><span class="txt">启动临床试验</span><span class="tag pharmax">菲玛</span></div>
+
+</div>
+</div>
+
+<script>
+function showTab(id){
+document.querySelectorAll('.tab').forEach(function(t){t.classList.remove('active')});
+document.getElementById(id).classList.add('active');
+document.querySelectorAll('.nav button').forEach(function(b){b.classList.remove('active')});
+event.target.classList.add('active');
+}
+</script>
+</body>
+</html>

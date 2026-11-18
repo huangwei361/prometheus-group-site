@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>维塔生命 | VitaCore - 抗衰老科技</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+SC:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--c:#f43f5e;--p:#be123c;--d:#030306;--l:#f0f0f0;--g:#888}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans SC',sans-serif;background:var(--d);color:var(--l);line-height:1.8}
+.bg{position:fixed;inset:0;background:linear-gradient(rgba(244,63,94,0.02) 1px,transparent 1px),linear-gradient(90deg,rgba(244,63,94,0.02) 1px,transparent 1px);background-size:50px 50px;z-index:-1}
+.o{position:fixed;border-radius:50%;filter:blur(150px);opacity:.12;z-index:-1}
+.o1{width:500px;height:500px;background:var(--c);top:-200px;left:-200px}
+.o2{width:400px;height:400px;background:var(--p);bottom:-150px;right:-150px}
+nav{position:fixed;top:0;width:100%;background:rgba(3,3,6,.9);backdrop-filter:blur(30px);border-bottom:1px solid rgba(244,63,94,.1);padding:18px 60px;display:flex;justify-content:space-between;align-items:center;z-index:1000}
+.logo{font-family:'Noto Sans SC',sans-serif;font-size:1.4em;font-weight:700}
+.logo span{font-family:'Orbitron',sans-serif;font-size:0.8em;opacity:0.5;margin-left:10px}
+.nav{display:flex;gap:50px}
+.nav a{color:rgba(255,255,255,.7);text-decoration:none;font-size:.9em;letter-spacing:2px;transition:.3s;position:relative}
+.nav a::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;background:var(--c);transition:.3s}
+.nav a:hover{color:var(--c)}.nav a:hover::after{width:100%}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 20px}
+.badge{display:inline-block;padding:8px 20px;border:1px solid rgba(244,63,94,.5);border-radius:30px;font-size:.75em;letter-spacing:3px;color:var(--c);margin-bottom:35px}
+.hero h1{font-size:clamp(2em,6vw,4em);font-weight:700;letter-spacing:8px;margin-bottom:8px}
+.hero h1 span{display:block;font-family:'Orbitron',sans-serif;font-size:.35em;letter-spacing:6px;margin-top:8px;opacity:0.6}
+.hero .cn{font-size:1.15em;letter-spacing:4px;color:var(--g);margin-bottom:10px}
+.hero>p{font-size:1.05em;letter-spacing:3px;color:var(--g);margin-bottom:45px;max-width:680px;line-height:1.9}
+.btns{display:flex;gap:25px;flex-wrap:wrap;justify-content:center}
+.btn{padding:16px 45px;font-size:.95em;font-weight:600;letter-spacing:2px;border-radius:4px;cursor:pointer;transition:.35s;text-decoration:none}
+.b1{background:linear-gradient(135deg,var(--c),#fb7185);border:none;color:#fff}
+.b1:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(244,63,94,.35)}
+.b2{background:0 0;border:1px solid rgba(244,63,94,.4);color:var(--c)}
+.b2:hover{background:rgba(244,63,94,.08)}
+section{padding:120px 60px;max-width:1400px;margin:0 auto}
+.h{text-align:center;margin-bottom:80px}
+.l{display:inline-block;font-size:.8em;letter-spacing:4px;color:var(--c);margin-bottom:18px;font-weight:600}
+.t{font-size:clamp(1.8em,3.5vw,2.5em);letter-spacing:5px;margin-bottom:20px;font-weight:600}
+.d{font-size:1.05em;color:var(--g);max-width:700px;margin:0 auto;line-height:1.9}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:30px}
+.c{background:rgba(255,255,255,.015);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:50px 35px;transition:.45s;position:relative}
+.c:hover{transform:translateY(-12px);border-color:rgba(244,63,94,.3);box-shadow:0 30px 80px rgba(244,63,94,.08)}
+.c::before{content:'';position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--c),transparent);opacity:0;transition:.3s}
+.c:hover::before{opacity:1}
+.ci{font-size:3em;margin-bottom:25px;display:block}
+.c h3{font-size:1.25em;letter-spacing:2px;margin-bottom:15px;font-weight:600}
+.c p{color:var(--g);font-size:.95em;line-height:1.8}
+.pip{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:25px}
+.pc{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.06);border-radius:15px;padding:35px}
+.pc h3{font-size:1.1em;letter-spacing:2px;margin-bottom:15px;color:var(--c)}
+.pc p{color:var(--g);font-size:.95em;line-height:1.7;margin-bottom:20px}
+.bar{height:4px;background:rgba(255,255,255,.08);border-radius:2px;overflow:hidden}
+.bar .fill{height:100%;background:linear-gradient(90deg,var(--c),#fb7185);border-radius:2px}
+.s{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;text-align:center;margin-top:60px}
+.si{padding:40px;background:rgba(255,255,255,.02);border-radius:15px}
+.sn{font-family:'Orbitron',sans-serif;font-size:2.8em;font-weight:700;color:var(--c);margin-bottom:10px}
+.sl{font-size:.9em;color:var(--g);letter-spacing:2px}
+.detail{max-width:900px;margin:0 auto}
+.detail h3{font-size:1.3em;letter-spacing:2px;margin:40px 0 20px;color:var(--c)}
+.detail p{color:var(--g);line-height:2;margin-bottom:20px}
+.detail ul{list-style:none}
+.detail li{color:var(--g);padding:12px 0;border-bottom:1px solid rgba(255,255,255,.05);padding-left:25px;position:relative}
+.detail li::before{content:'▸';position:absolute;left:0;color:var(--c)}
+footer{background:#050508;padding:60px 40px;text-align:center;border-top:1px solid rgba(255,255,255,.05)}
+footer p{color:var(--g);font-size:.9em}
+</style>
+</head>
+<body>
+<div class="bg"></div>
+<div class="o o1"></div><div class="o o2"></div>
+<nav>
+<div class="logo">维塔生命 <span>VitaCore</span></div>
+<div class="nav">
+<a href="#platform">技术平台</a>
+<a href="#pipeline">研发管线</a>
+<a href="#about">关于我们</a>
+<a href="../index.html">集团首页</a>
+<a href="../cases/index.html">案例中心</a>
+</div>
+</nav>
+<section class="hero">
+<div class="badge">LONGEVITY SCIENCE</div>
+<h1>VITACORE <span>维塔生命</span></h1>
+<div class="cn">击败衰老</div>
+<p>我们正在逆转衰老进程，让死亡成为选择而非必然。为人类增加20年以上的健康寿命。</p>
+<div class="btns">
+<a href="#pipeline" class="btn b1">研发管线</a>
+<a href="#platform" class="btn b2">技术平台</a>
+</div>
+</section>
+<section id="pipeline">
+<div class="h"><div class="l">RESEARCH PIPELINE</div>
+<div class="t">研发管线</div>
+<div class="d">我们的抗衰老管线从细胞层面逆转衰老，重塑青春。</div>
+</div>
+<div class="pip">
+<div class="pc"><h3>VC-001 衰老细胞清除</h3><p>Senolytic药物选择性清除衰老细胞。改善组织功能，延长健康寿命。</p><div class="bar"><div class="fill" style="width:60%"></div></div></div>
+<div class="pc"><h3>VC-002 端粒延长</h3><p>端粒酶激活剂延长染色体端粒。延缓细胞衰老，逆转生物年龄。</p><div class="bar"><div class="fill" style="width:45%"></div></div></div>
+<div class="pc"><h3>VC-003 线粒体修复</h3><p>MitoT及靶向分子修复受损线粒体。恢复细胞能量代谢，提升活力。</p><div class="bar"><div class="fill" style="width:50%"></div></div></div>
+<div class="pc"><h3>VC-004 器官再生</h3><p>年轻血液因子和干细胞，恢复器官功能。逆转器官衰老。</p><div class="bar"><div class="fill" style="width:40%"></div></div></div>
+<div class="pc"><h3>VC-005 蛋白质稳态</h3><p>激活细胞蛋白质质量控制系统，清除错误折叠蛋白。预防神经退行性疾病。</p><div class="bar"><div class="fill" style="width:35%"></div></div></div>
+<div class="pc"><h3>VC-006 表观遗传重编程</h3><p>Oct4等因子部分重编程细胞表观遗传。逆转细胞年龄，恢复功能。</p><div class="bar"><div class="fill" style="width:30%"></div></div></div>
+</div>
+</section>
+<section id="platform">
+<div class="h"><div class="l">TECHNOLOGY PLATFORM</div>
+<div class="t">技术平台</div>
+</div>
+<div class="g">
+<div class="c"><span class="ci">&#10017;</span><h3>Senolytics</h3><p>衰老细胞清除技术。精准靶向衰老细胞，恢复组织年轻状态。</p></div>
+<div class="c"><span class="ci">&#9876;</span><h3>端粒科学</h3><p>端粒酶调控和端粒延长技术。延长细胞分裂潜能，逆转衰老。</p></div>
+<div class="c"><span class="ci">&#9889;</span><h3>线粒体医学</h3><p>线粒体功能修复和能量代谢优化。恢复细胞动力源。</p></div>
+<div class="c"><span class="ci">&#129516;</span><h3>表观遗传</h3><p>DNA甲基化时钟和表观遗传重编程。逆转生物年龄。</p></div>
+</div>
+</section>
+<section id="about" style="background:rgba(255,255,255,0.02)">
+<div class="h"><div class="l">ABOUT US</div>
+<div class="t">关于维塔生命</div>
+<div class="d">维塔生命(VitaCore)成立于2026年，隶属于普罗米修斯集团，致力于征服衰老相关疾病和延长人类健康寿命。我们的使命：为人类增加20年以上的优质生命。</div>
+</div>
+<div class="s">
+<div class="si"><div class="sn">20+</div><div class="sl">年健康寿命</div></div>
+<div class="si"><div class="sn">6</div><div class="sl">核心管线</div></div>
+<div class="si"><div class="sn">3亿+</div><div class="sl">研发投资</div></div>
+</div>
+</section>
+<div class="detail">
+<h3>核心技术</h3>
+<p>维塔生命拥有全球领先的抗衰老技术平台，从根本上逆转衰老进程。</p>
+<ul>
+<li><strong>Senolytic药物：</strong>选择性清除衰老细胞的药物组合</li>
+<li><strong>端粒酶激活：</strong>安全可控的端粒延长技术</li>
+<li><strong>线粒体靶向：</strong>MitoT大成问题等线粒体修复分子</li>
+<li><strong>表观遗传重编程：</strong>部分重编程技术逆转细胞年龄</li>
+</ul>
+<h3>临床项目</h3>
+<ul>
+<li><strong>VC-001（衰老细胞清除）：</strong>针对骨关节炎的临床试验已完成安全性评估</li>
+<li><strong>VC-002（端粒延长）：</strong>临床前研究显示显著的端粒延长效果</li>
+<li><strong>VC-003（线粒体）：</strong>针对帕金森病的临床I期试验</li>
+</ul>
+</div>
+<footer><p>&copy; 2026 维塔生命 VitaCore. 普罗米修斯集团成员。保留所有权利。</p></footer>
+</body>
+</html>

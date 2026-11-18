@@ -1,0 +1,33 @@
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px;margin-bottom:20px}
+.card h3{font-size:1.12em;margin-bottom:6px}
+.card .sub{color:var(--tx2);font-size:.86em;margin-bottom:14px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.chip{font-size:.72em;padding:3px 11px;border-radius:20px;background:rgba(168,85,247,.12);
+  border:1px solid var(--line);color:var(--p3)}
+.chip.own{background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.25);color:var(--acc)}
+.chip.st{background:rgba(52,211,153,.1);border-color:rgba(52,211,153,.25);color:var(--ok)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:820px){.grid2{grid-template-columns:1fr}}
+
+/* profile table */
+.ptable{width:100%;border-collapse:collapse;font-size:.88em}
+.ptable td{padding:9px 4px;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:top}
+.ptable td:first-child{color:var(--tx2);width:32%;white-space:nowrap}
+
+/* gaps */
+.gap{border-left:2px solid var(--p2);padding:12px 16px;margin-bottom:12px;background:rgba(124,58,237,.06);border-radius:0 8px 8px 0}
+.gap .it{font-weight:600;font-size:.92em}
+.gap .wy{color:var(--tx2);font-size:.85em;margin-top:3px}
+
+/* metric table */
+.mtable{width:100%;border-collapse:collapse;font-size:.85em;margin-top:10px}
+.mtable th{text-align:left;color:var(--p3);font-weight:600;padding:9px 8px;border-bottom:1px solid var(--line);font-size:.9em;white-space:nowrap}
+.mtable td{padding:9px 8px;border-bottom:1px solid rgba(255,255,255,.05)}
+.mtable tr:hover td{background:rgba(168,85,247,.05)}
+.star{color:var(--warn)}
+.trend{font-size:.85em;padding:2px 8px;border-radius:20px}
+.trend.up{color:var(--bad);background:rgba(251,113,133,.12)}
+.trend.down{color:var(--ok);background:rgba(52,211,153,.12)}
+.trend.flat{color:var(--tx2);background:rgba(255,255,255,.05)}
