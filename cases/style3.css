@@ -44,3 +44,33 @@ h2.sec{font-size:1.15em;margin:34px 0 14px;padding-left:12px;border-left:3px sol
 footer{margin-top:60px;padding:30px 0 50px;border-top:1px solid var(--line);text-align:center;color:var(--tx2);font-size:.8em}
 .back{display:inline-block;margin-bottom:20px;color:var(--p3);text-decoration:none;font-size:.85em}
 .back:hover{color:var(--p1)}
+
+/* ---------- Mobile layout for case center ---------- */
+@media(max-width:768px){
+  .nav-in{padding:10px 16px;align-items:center;flex-wrap:wrap;gap:8px}
+  .nav-links{width:100%;flex:0 0 100%;gap:0;justify-content:flex-start;flex-wrap:nowrap;
+    overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{font-size:.72em;letter-spacing:0;white-space:nowrap;padding:4px 8px}
+  .hero{padding:40px 0 26px}
+  .hero h1{font-size:1.55em;letter-spacing:1px}
+  .hero p{font-size:.9em;padding:0 4px}
+  .hero .meta{gap:16px}
+  .wrap{padding:0 16px}
+  .card{padding:16px 14px}
+  .tab{padding:7px 14px;font-size:.78em}
+  h2.sec{font-size:1.05em;margin:26px 0 10px}
+  .note{padding:12px 14px;font-size:.82em}
+  /* metric table -> scrollable instead of squashed */
+  .mtable{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
+  .mtable thead,.mtable tbody{display:table;width:100%;min-width:520px}
+  .ptable{font-size:.84em}
+  .ptable td{padding:8px 3px}
+  .fu{font-size:.82em}
+  .fu td,.fu th{padding:8px 5px}
+  .stage{flex-direction:column;gap:4px}
+  .stage .num{flex:none}
+  .ai{grid-template-columns:1fr}
+  .tl{padding-left:22px}
+  footer{margin-top:36px;padding:20px 0 34px}
+}

@@ -152,6 +152,50 @@ footer{background:#010103;padding:60px;text-align:center;border-top:1px solid rg
 footer .footer-logo{font-family:'Orbitron',sans-serif;font-size:1.5em;font-weight:800;letter-spacing:6px;margin-bottom:10px}
 footer p{color:var(--g);font-size:.85em;line-height:1.8}
 
+
+
+/* Floating quick-jump to case center (mobile) */
+.jump-cases{position:fixed;right:16px;bottom:16px;z-index:900;display:none;
+  padding:12px 18px;border-radius:30px;text-decoration:none;
+  background:linear-gradient(135deg,var(--c1),var(--c4));color:#020205;
+  font-size:.82em;font-weight:700;letter-spacing:1px;
+  box-shadow:0 8px 26px rgba(0,240,255,.28)}
+@media(max-width:768px){.jump-cases{display:block}}
+@media(min-width:769px){.jump-cases{display:none}}
+
+/* Case center promo */
+#cases{background:linear-gradient(180deg,transparent,rgba(0,240,255,.03),transparent)}
+.case-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin:40px 0 20px}
+.case-card{display:block;position:relative;text-decoration:none;color:inherit;
+  background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:16px;
+  padding:30px 28px;transition:.3s;overflow:hidden}
+.case-card::before{content:'';position:absolute;inset:0;opacity:0;transition:.3s;
+  background:linear-gradient(135deg,rgba(0,240,255,.08),rgba(139,92,246,.08))}
+.case-card:hover{border-color:rgba(0,240,255,.35);transform:translateY(-4px)}
+.case-card:hover::before{opacity:1}
+.case-card>*{position:relative}
+.cc-badge{display:inline-block;font-family:'Orbitron',sans-serif;font-size:.7em;letter-spacing:3px;
+  padding:4px 12px;border:1px solid rgba(0,240,255,.3);border-radius:20px;color:var(--c1);margin-bottom:14px}
+.case-card h4{font-size:1.25em;margin-bottom:10px;color:#fff}
+.case-card p{color:var(--g);font-size:.9em;line-height:1.8;margin-bottom:16px}
+.cc-tags{display:flex;gap:8px;flex-wrap:wrap}
+.cc-tags span{font-size:.7em;padding:3px 10px;border-radius:20px;
+  background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.25);color:#b9a6e8}
+.cc-go{margin-top:18px;color:var(--c1);font-size:.85em;letter-spacing:1px}
+.case-note{color:var(--g);font-size:.8em;margin-top:16px;opacity:.75}
+
+/* Mobile fixes */
+@media(max-width:768px){
+  .hero h1{font-size:clamp(1.7em,8.5vw,2.6em);letter-spacing:4px}
+  .hero h1 .zh{letter-spacing:4px;margin-top:10px}
+  .hero-slogan{font-size:1.05em;letter-spacing:3px}
+  .hero-sub{letter-spacing:1px;font-size:.92em}
+  .hero-btns{gap:12px}
+  .hero-btns .btn{padding:13px 22px;font-size:.9em}
+  .case-cards{grid-template-columns:1fr;gap:16px}
+  .case-card{padding:24px 22px}
+}
+
 /* Responsive */
 @media(max-width:768px){
 nav{padding:15px 25px}
@@ -186,9 +230,10 @@ section{padding:60px 25px}
 <a href="#finance">资金规划</a>
 <a href="#download">下载规划</a>
 <a href="cases/index.html">案例中心</a>
-<a href="2026工作计划.html">工作计划</a>
 </div>
 </nav>
+<a href="cases/index.html" class="jump-cases" id="jumpCases">案例中心</a>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -200,7 +245,8 @@ section{padding:60px 25px}
 <a href="#companies" class="btn btn-primary">探索旗下公司</a>
 <a href="#download" class="btn btn-download"><i class="fas fa-download"></i> 下载发展规划</a>
 <a href="#roadmap" class="btn btn-outline">发展路线图</a>
-</div>
+
+<a href="cases/index.html" class="btn btn-primary">案例跟踪中心</a></div>
 </section>
 
 <!-- VISION -->
@@ -420,6 +466,31 @@ section{padding:60px 25px}
 </section>
 
 <!-- DOWNLOAD -->
+
+<!-- CASE CENTER -->
+<section id="cases">
+<h2>长期健康案例跟踪中心</h2>
+<p>把每一个真实案例，变成一条可以持续更新、可以量化改进、可以沉淀为产品的长期数据线。<br>
+所有内容均已去标识化处理，不含姓名、具体医院、医生姓名与原始化验单。</p>
+<div class="case-cards">
+<a class="case-card" href="cases/index.html">
+<div class="cc-badge">C-001</div>
+<h4>自身免疫性肝病</h4>
+<p>长期激素治疗后减量困难、反复反弹的典型病例。跟踪分型盲点、激素减量节奏与激素副作用管理三条线。</p>
+<div class="cc-tags"><span>长期用药管理</span><span>诊断盲点</span><span>激素副作用</span></div>
+<div class="cc-go">进入案例 →</div>
+</a>
+<a class="case-card" href="cases/index.html">
+<div class="cc-badge">C-002</div>
+<h4>高血脂长期跟踪</h4>
+<p>血脂四项与风险因子盘面、服药依从性、亚临床动脉粥样硬化三条线并行，建立可长期复用的管理节奏。</p>
+<div class="cc-tags"><span>心血管风险</span><span>用药依从性</span><span>生活方式干预</span></div>
+<div class="cc-go">进入案例 →</div>
+</a>
+</div>
+<p class="case-note">案例中心内容用于健康管理方法展示，不构成医疗建议，所有诊疗决策均由主治医师负责。</p>
+</section>
+
 <section id="download">
 <h2>下载集团发展规划</h2>
 <p>获取完整的普罗米修斯集团发展规划文档，包含详细的战略布局、管线数据和财务预测。</p>
@@ -427,30 +498,16 @@ section{padding:60px 25px}
 <div class="dl-card">
 <div class="dl-icon"><i class="fas fa-file-word" style="color:#2b579a;font-size:1em"></i></div>
 <h4>Word 文档</h4>
-<p>完整的集团发展规划，含表格和管线数据，适合打印和分发</p>
-<div class="dl-size">格式 · docx</div>
+<p>完整的集团发展规划，含表格和管线数据，适合打印和分发。</p>
+<div class="dl-size">格式：.docx</div>
 <a href="普罗米修斯集团发展规划.docx" class="btn btn-download"><i class="fas fa-download"></i> 下载 Word</a>
 </div>
 <div class="dl-card">
 <div class="dl-icon"><i class="fas fa-file-alt" style="color:var(--c1);font-size:1em"></i></div>
 <h4>在线预览</h4>
-<p>集团发展规划完整版，可在浏览器中直接阅读</p>
-<div class="dl-size">格式 · 网页</div>
-<a href="规划.html" class="btn btn-outline"><i class="fas fa-eye"></i> 在线查看</a>
-</div>
-<div class="dl-card">
-<div class="dl-icon"><i class="fas fa-calendar-alt" style="color:var(--c2);font-size:1em"></i></div>
-<h4>2026 工作计划</h4>
-<p>年度执行清单，按子公司拆分到里程碑、到责任人</p>
-<div class="dl-size">格式 · 网页</div>
-<a href="2026工作计划.html" class="btn btn-outline"><i class="fas fa-eye"></i> 在线查看</a>
-</div>
-<div class="dl-card">
-<div class="dl-icon"><i class="fas fa-file-pdf" style="color:var(--c3);font-size:1em"></i></div>
-<h4>集团宣传册</h4>
-<p>紫色系品牌宣传册，适合对外介绍与打印分发</p>
-<div class="dl-size">格式 · PDF</div>
-<a href="普罗米修斯集团宣传册-最终版.pdf" class="btn btn-download"><i class="fas fa-download"></i> 下载 PDF</a>
+<p>Markdown格式的规划文档，可在浏览器中直接查看。</p>
+<div class="dl-size">格式：.md</div>
+<a href="规划.md" class="btn btn-outline"><i class="fas fa-eye"></i> 在线查看</a>
 </div>
 </div>
 </section>
