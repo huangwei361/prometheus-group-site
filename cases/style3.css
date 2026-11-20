@@ -77,6 +77,11 @@ footer{margin-top:60px;padding:30px 0 50px;border-top:1px solid var(--line);text
   .plan-box table td.w{white-space:normal}
   .plan-box table td.n{font-size:.86em}
   .mtable tr:hover td,.fu tr:hover td{background:transparent}
+  /* 表格整体不撑破视口：全部改成块级，宽度锁定 100% */
+  .mtable,.fu,.plan-box table,.ptable{display:block;width:100%;table-layout:fixed;max-width:100%}
+  .ptable td,.mtable td,.fu td,.plan-box table td{max-width:100%;word-break:break-word;overflow-wrap:anywhere}
+  .card a,.note a,td a{word-break:break-all;overflow-wrap:anywhere}
+  .plan-box table tr,.mtable tr,.fu tr{max-width:100%}
   /* 病例档案：项目名一行、内容一行 */
   .ptable{font-size:.86em}
   .ptable tr{display:block;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
