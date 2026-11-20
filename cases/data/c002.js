@@ -93,7 +93,7 @@ window.CASE_DATA['c002'] = {
                         ],
     "metric_groups":  [
                           {
-                              "name":  "血脂核心四项",
+                              "name":  "血脂核心四项 Lipid Panel",
                               "note":  "只有连续三次以上的同一家实验室结果，才谈得上\"趋势\"",
                               "metrics":  [
                                               {
@@ -134,7 +134,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "非 HDL-C",
+                                                  "name":  "非高密度脂蛋白胆固醇 Non-HDL-C",
                                                   "unit":  "mmol/L",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -155,11 +155,11 @@ window.CASE_DATA['c002'] = {
                                           ]
                           },
                           {
-                              "name":  "风险因子盘面",
+                              "name":  "风险因子盘面 Risk Factor Profile",
                               "note":  "血脂不能单看，必须放进完整风险里",
                               "metrics":  [
                                               {
-                                                  "name":  "收缩压 / 舒张压",
+                                                  "name":  "收缩压 / 舒张压 Systolic/Diastolic BP",
                                                   "unit":  "mmHg",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -168,7 +168,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "空腹血糖",
+                                                  "name":  "空腹血糖 Fasting Glucose",
                                                   "unit":  "mmol/L",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -177,7 +177,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "血红蛋白 A1c",
+                                                  "name":  "糖化血红蛋白 HbA1c",
                                                   "unit":  "%",
                                                   "baseline":  "待测",
                                                   "current":  "待测",
@@ -186,7 +186,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "BMI / 腰围",
+                                                  "name":  "体重指数 / 腰围 BMI / Waist Circumference",
                                                   "unit":  "kg/m² / cm",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -195,7 +195,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "吸烟状态",
+                                                  "name":  "吸烟状态 Smoking Status",
                                                   "unit":  "—",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -204,7 +204,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "10 年 ASCVD 风险",
+                                                  "name":  "10 年动脉粥样硬化性心血管病风险 10-Year ASCVD Risk",
                                                   "unit":  "%",
                                                   "baseline":  "待算",
                                                   "current":  "待算",
@@ -216,11 +216,11 @@ window.CASE_DATA['c002'] = {
                                           ]
                           },
                           {
-                              "name":  "用药与依从性",
+                              "name":  "用药与依从性 Medication \u0026 Adherence",
                               "note":  "药开了不等于药吃了，这是血脂管理最大的漏损",
                               "metrics":  [
                                               {
-                                                  "name":  "他汀类药名与剂量",
+                                                  "name":  "他汀类药名与剂量 Statin Name \u0026 Dose",
                                                   "unit":  "—",
                                                   "baseline":  "待确认",
                                                   "current":  "待确认",
@@ -230,7 +230,7 @@ window.CASE_DATA['c002'] = {
                                                   "star":  true
                                               },
                                               {
-                                                  "name":  "实际服药天数占比",
+                                                  "name":  "实际服药天数占比 Actual Medication Adherence Rate (MPR)",
                                                   "unit":  "%",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -240,7 +240,7 @@ window.CASE_DATA['c002'] = {
                                                   "star":  true
                                               },
                                               {
-                                                  "name":  "漏服/停药原因记录",
+                                                  "name":  "漏服/停药原因记录 Missed-Dose Reason Log",
                                                   "unit":  "—",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -267,7 +267,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "依从性提醒机制",
+                                                  "name":  "依从性提醒机制 Adherence Reminder System",
                                                   "unit":  "—",
                                                   "baseline":  "无",
                                                   "current":  "计划引入",
@@ -278,11 +278,11 @@ window.CASE_DATA['c002'] = {
                                           ]
                           },
                           {
-                              "name":  "生活方式基线",
+                              "name":  "生活方式基线 Lifestyle Baseline",
                               "note":  "唯一不用吃药就能改、却最常被跳过的一块",
                               "metrics":  [
                                               {
-                                                  "name":  "每日步数 / 中等强度运动",
+                                                  "name":  "每日步数 / 中等强度运动 Daily Steps / Moderate-Vigorous Activity (MVPA)",
                                                   "unit":  "步 / 分钟",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -291,7 +291,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "体重",
+                                                  "name":  "体重 Body Weight",
                                                   "unit":  "kg",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -300,7 +300,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "膳食结构（饱和脂肪/膳食纤维）",
+                                                  "name":  "膳食结构（饱和脂肪/膳食纤维）Dietary Pattern (Saturated Fat / Fiber)",
                                                   "unit":  "—",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -309,7 +309,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "饮酒量",
+                                                  "name":  "饮酒量 Alcohol Intake",
                                                   "unit":  "g/日",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -318,7 +318,7 @@ window.CASE_DATA['c002'] = {
                                                   "trend":  "flat"
                                               },
                                               {
-                                                  "name":  "睡眠时长",
+                                                  "name":  "睡眠时长 Sleep Duration",
                                                   "unit":  "h",
                                                   "baseline":  "待填",
                                                   "current":  "待填",
@@ -329,7 +329,7 @@ window.CASE_DATA['c002'] = {
                                           ]
                           },
                           {
-                              "name":  "亚临床动脉粥样硬化",
+                              "name":  "亚临床动脉粥样硬化 Subclinical Atherosclerosis",
                               "note":  "有斑块则目标值和干预强度整体上调",
                               "metrics":  [
                                               {
@@ -364,49 +364,49 @@ window.CASE_DATA['c002'] = {
                       ],
     "pathway":  [
                     {
-                        "stage":  "0 风险分层",
+                        "stage":  "0 风险分层 Risk Stratification",
                         "plan":  "补齐 8 项诊断盲点（继发因素、家族史、血糖、甲状腺、肝肾、吸烟饮食、ASCVD 分层、斑块筛查、他汀不耐受）",
                         "trigger":  "立即执行",
                         "status":  "todo",
                         "owner":  "菲玛科技 + 主诊医师"
                     },
                     {
-                        "stage":  "1 生活方式打底",
+                        "stage":  "1 生活方式打底 Lifestyle Foundation",
                         "plan":  "先做零成本的三件事：戒烟、减重 5-10%、每周 150 分钟中等强度运动、膳食纤维与饱和脂肪调整",
                         "trigger":  "与阶段 0 同步",
                         "status":  "todo",
                         "owner":  "患者 + 家属"
                     },
                     {
-                        "stage":  "2 标准降脂",
+                        "stage":  "2 标准降脂 Standard Lipid-Lowering",
                         "plan":  "按风险分层启动他汀类（阿托伐他汀/瑞舒伐他汀等），以 LDL-C 达标为目标而非固定剂量",
                         "trigger":  "分层完成后",
                         "status":  "todo",
                         "owner":  "主诊医师"
                     },
                     {
-                        "stage":  "3 强化降脂",
+                        "stage":  "3 强化降脂 Intensive Lipid-Lowering",
                         "plan":  "加用依折麦布（机制不同，可叠加）；必要时加 PCSK9 抑制剂",
                         "trigger":  "他汀单药未达标或不耐受",
                         "status":  "todo",
                         "owner":  "主诊医师"
                     },
                     {
-                        "stage":  "4 不耐受处理",
+                        "stage":  "4 不耐受处理 Intolerance Management",
                         "plan":  "调整为隔日给药、换水溶性他汀或非他汀类，并同步排查肌痛其他原因",
                         "trigger":  "出现肌痛或 CK 升高",
                         "status":  "todo",
                         "owner":  "主诊医师"
                     },
                     {
-                        "stage":  "5 依从性工程",
+                        "stage":  "5 依从性工程 Adherence Engineering",
                         "plan":  "AI 用药提醒 + 漏服归因分析 + 家庭药盒 + 定期复诊衔接",
                         "trigger":  "与阶段 2 同步",
                         "status":  "todo",
                         "owner":  "菲玛科技"
                     },
                     {
-                        "stage":  "6 并行抗衰",
+                        "stage":  "6 并行抗衰 Parallel Longevity Track",
                         "plan":  "评估长期 mRNA 系统更新干预对血管内皮与代谢稳态的潜在作用（临床前）",
                         "trigger":  "主病情稳定后",
                         "status":  "todo",
@@ -432,27 +432,27 @@ window.CASE_DATA['c002'] = {
                  ],
     "followup":  [
                      {
-                         "item":  "血脂四项",
+                         "item":  "血脂四项 Lipid Panel",
                          "freq":  "初始治疗后 4-6 周，稳定后每 3 月",
                          "note":  "调整剂量后必须提前复查"
                      },
                      {
-                         "item":  "肝功能 + CK",
+                         "item":  "肝功能 + 肌酸激酶 Liver Function + CK",
                          "freq":  "每 3 月，增量期加密",
                          "note":  "他汀安全性的两条底线"
                      },
                      {
-                         "item":  "血压、体重、步数",
+                         "item":  "血压、体重、步数 BP, Weight, Steps",
                          "freq":  "持续记录",
                          "note":  "生活方式干预的唯一证据"
                      },
                      {
-                         "item":  "实际服药天数",
+                         "item":  "实际服药天数 Actual Medication Days",
                          "freq":  "每月",
                          "note":  "依从性是达标率的直接解释变量"
                      },
                      {
-                         "item":  "年度风险复评",
+                         "item":  "年度风险复评 Annual Risk Re-assessment",
                          "freq":  "每年",
                          "note":  "重新计算 ASCVD 风险并调整目标值"
                      }

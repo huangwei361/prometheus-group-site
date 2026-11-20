@@ -127,8 +127,11 @@
     if (c.timeline && c.timeline.length) {
       h += '<h2 class="sec">病程时间轴</h2><div class="card"><div class="tl">';
       c.timeline.forEach(function (t) {
+        var lv = t.level || '事实';
+        var lvc = lv === '事实' ? 'st-ok' : (lv === '判断' ? 'st-doing' : 'st-todo');
         h += '<div class="tl-item"><div class="tl-date">' + esc(t.date) + '</div>' +
-          '<div class="tl-title">' + esc(t.title) + '</div>' +
+          '<div class="tl-title">' + esc(t.title) +
+          '　<span class="chip ' + lvc + '" style="font-size:.68em">' + esc(lv) + '</span></div>' +
           '<div class="tl-detail">' + esc(t.detail) + '</div></div>';
       });
       h += '</div></div>';
@@ -154,17 +157,64 @@
     return h;
   }
 
+  function pendingBlock(c) {
+    if (!c.pending_checks || !c.pending_checks.length) return '';
+    var h = '<h2 class="sec">待核实清单 Pending Checks</h2>' +
+      '<div class="sec-t">还没拿到证据的事。拿到证据即可逐项关闭——先关掉影响最大的那几项。</div>' +
+      '<div class="card"><table class="mtable"><thead><tr><th>状态</th><th>待核实事项</th><th>为什么关键</th><th>怎么拿到</th></tr></thead><tbody>';
+    c.pending_checks.forEach(function (p) {
+      var st = p.status || '待核实';
+      var cls = st === '已关闭' ? 'ok' : (st === '进行中' ? 'doing' : 'todo');
+      h += '<tr><td><span class="chip st-' + cls + '" style="font-size:.68em">' + esc(st) + '</span>' +
+        (p.status_note ? '<div style="color:#b9a9d6;font-size:.85em;margin-top:.3em">' + esc(p.status_note) + '</div>' : '') + '</td>' +
+        '<td>' + esc(p.item) + '</td><td>' + esc(p.why) + '</td>' +
+        '<td style="color:#a99cc4">' + esc(p.how) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    return h;
+  }
+
+  function nextBlock(c) {
+    if (!c.next_steps || !c.next_steps.length) return '';
+    var h = '<h2 class="sec">下一步 Next Steps</h2>' +
+      '<div class="card"><table class="mtable"><thead><tr><th>序</th><th>动作</th><th>说明</th></tr></thead><tbody>';
+    c.next_steps.forEach(function (s) {
+      h += '<tr><td>' + esc(s.step) + '</td><td>' + esc(s.action) + '</td>' +
+        '<td style="color:#a99cc4">' + esc(s.note) + '</td></tr>';
+    });
+    h += '</tbody></table></div>';
+    return h;
+  }
+
+  function docsBlock(c) {
+    if (!c.docs || !c.docs.length) return '';
+    var h = '<h2 class="sec">配套文档 Documents</h2><div class="card">';
+    c.docs.forEach(function (d) {
+      h += '<div class="gap"><div class="it"><a href="' + esc(d.file) + '" style="color:#c084fc">' + esc(d.name) + '</a></div>' +
+        '<div class="wy">' + esc(d.note) + '</div></div>';
+    });
+    h += '</div>';
+    return h;
+  }
+
   function stats() {
     var m = 0, g = 0, dates = [];
+    var pend = 0, nodes = 0;
     IDS.forEach(function (id) {
       var c = D[id];
       (c.metric_groups || []).forEach(function (grp) { m += (grp.metrics || []).length; });
       g += (c.diagnostic_gaps || []).length;
+      pend += (c.pending_checks || []).length;
+      nodes += (c.timeline || []).length;
       dates.push(c.updated);
     });
     document.getElementById('m-cases').textContent = IDS.length;
     document.getElementById('m-metrics').textContent = m;
     document.getElementById('m-gaps').textContent = g;
+    var el = document.getElementById('m-pending');
+    if (el) el.textContent = pend;
+    var el2 = document.getElementById('m-nodes');
+    if (el2) el2.textContent = nodes;
     document.getElementById('f-date').textContent = dates.sort().reverse()[0] || '-';
   }
 
@@ -172,7 +222,8 @@
     var c = D[cur];
     var v = document.getElementById('view');
     if (!c) { v.innerHTML = '<div class="card">暂无数据</div>'; return; }
-    v.innerHTML = head(c) + profileBlock(c) + findingsBlock(c) + gapsBlock(c) + metricsBlock(c) + pathwayBlock(c);
+    v.innerHTML = head(c) + profileBlock(c) + findingsBlock(c) + gapsBlock(c) + metricsBlock(c) + pathwayBlock(c) +
+      pendingBlock(c) + nextBlock(c) + docsBlock(c);
     renderTabs();
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
