@@ -56,6 +56,20 @@
   }
 
 
+  function plainBlock(c) {
+    var p = c.plain;
+    if (!p) return '';
+    var h = '<h2 class="sec">一句话结论与建议 Plain Takeaway</h2>' +
+      '<div class="plain-box"><div class="pb-t">结论</div>' +
+      '<div class="pb-c">' + esc(p.conclusion) + '</div>' +
+      '<div class="pb-t" style="margin-bottom:6px">怎么办</div><ul class="pb-l">';
+    (p.advice || []).forEach(function (a) { h += '<li>' + esc(a) + '</li>'; });
+    h += '</ul>';
+    if (p.note) h += '<div class="pb-n"><b>判断依据：</b>' + esc(p.note) + '</div>';
+    h += '</div>';
+    return h;
+  }
+
   function profileBlock(c) {
     var h = '<h2 class="sec">病例档案</h2><div class="card"><table class="ptable">';
     (c.profile || []).forEach(function (p) {
@@ -97,6 +111,9 @@
     (c.metric_groups || []).forEach(function (g) {
       h += '<div class="card"><h3 style="font-size:1em">' + esc(g.name) + '</h3>' +
         '<div class="sub">' + esc(g.note || '') + '</div>' +
+        (g.plain ? '<div class="plain-grp"><div class="pg-c"><span class="pg-k">结论：</span>' +
+          esc(g.plain.conclusion) + '</div><div class="pg-a"><span class="pg-k">建议：</span>' +
+          esc(g.plain.advice) + '</div></div>' : '') +
         '<table class="mtable"><thead><tr><th>指标</th><th>基线</th><th>当前</th><th>目标</th><th>频次</th><th>趋势</th></tr></thead><tbody>';
       (g.metrics || []).forEach(function (m) {
         h += '<tr><td>' + (m.star ? '<span class="star">★</span> ' : '') + esc(m.name) +
@@ -222,7 +239,7 @@
     var c = D[cur];
     var v = document.getElementById('view');
     if (!c) { v.innerHTML = '<div class="card">暂无数据</div>'; return; }
-    v.innerHTML = head(c) + profileBlock(c) + findingsBlock(c) + gapsBlock(c) + metricsBlock(c) + pathwayBlock(c) +
+    v.innerHTML = head(c) + plainBlock(c) + profileBlock(c) + findingsBlock(c) + gapsBlock(c) + metricsBlock(c) + pathwayBlock(c) +
       pendingBlock(c) + nextBlock(c) + docsBlock(c);
     renderTabs();
     window.scrollTo({ top: 0, behavior: 'smooth' });

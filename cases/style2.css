@@ -31,3 +31,19 @@
 .trend.up{color:var(--bad);background:rgba(251,113,133,.12)}
 .trend.down{color:var(--ok);background:rgba(52,211,153,.12)}
 .trend.flat{color:var(--tx2);background:rgba(255,255,255,.05)}
+
+/* ---------- 通俗结论与建议 ---------- */
+.plain-box{background:linear-gradient(135deg,rgba(168,85,247,.16),rgba(124,58,237,.06));
+  border:1px solid rgba(168,85,247,.38);border-radius:14px;padding:18px 20px;margin:4px 0 2px}
+.plain-box .pb-t{font-weight:700;color:#e9d5ff;font-size:1.02em;margin-bottom:9px;letter-spacing:.5px}
+.plain-box .pb-c{font-size:1em;line-height:1.8;color:#f5edff;margin-bottom:12px}
+.plain-box .pb-l{list-style:none;margin:0;padding:0}
+.plain-box .pb-l li{position:relative;padding-left:20px;margin:7px 0;font-size:.94em;line-height:1.75;color:#e9def7}
+.plain-box .pb-l li::before{content:'\25B8';position:absolute;left:0;color:#c084fc}
+.plain-box .pb-n{margin-top:11px;font-size:.88em;line-height:1.75;color:#b9a9d6;
+  border-top:1px dashed rgba(168,85,247,.32);padding-top:10px}
+.plain-grp{margin:10px 0 14px;padding:11px 14px;border-left:3px solid #a855f7;
+  background:rgba(124,58,237,.12);border-radius:0 10px 10px 0}
+.plain-grp .pg-c{font-size:.95em;line-height:1.75;color:#f2e8ff}
+.plain-grp .pg-a{font-size:.9em;line-height:1.75;color:#cbb9e6;margin-top:5px}
+.plain-grp .pg-k{color:#c084fc;font-weight:700}
