@@ -63,10 +63,11 @@
       '<div class="plan-box"><div class="pb-h">' + esc(p.title) + '</div>' +
       '<div class="pb-head">' + esc(p.headline) + '</div>' +
       '<div class="pb-why">' + esc(p.why) + '</div>' +
-      '<table><thead><tr><th style="width:20%">时间点</th><th style="width:42%">做什么</th><th>说明</th></tr></thead><tbody>';
+      '<table class="ptab"><thead><tr><th style="width:20%">时间点</th><th style="width:42%">做什么</th><th>说明</th></tr></thead><tbody>';
     (p.steps || []).forEach(function (s) {
-      h += '<tr><td class="w">' + esc(s.when) + '</td><td>' + esc(s.what) + '</td>' +
-        '<td class="n">' + esc(s.note) + '</td></tr>';
+      h += '<tr><td class="w t-first" data-label="时间点">' + esc(s.when) + '</td>' +
+        '<td data-label="做什么">' + esc(s.what) + '</td>' +
+        '<td class="n" data-label="说明">' + esc(s.note) + '</td></tr>';
     });
     h += '</tbody></table>';
     if (p.goal) h += '<div class="pb-goal"><b>目标：</b>' + esc(p.goal) + '</div>';
@@ -146,12 +147,12 @@
           esc(g.plain.advice) + '</div></div>' : '') +
         '<table class="mtable"><thead><tr><th>指标</th><th>基线</th><th>当前</th><th>目标</th><th>频次</th><th>趋势</th></tr></thead><tbody>';
       (g.metrics || []).forEach(function (m) {
-        h += '<tr><td>' + (m.star ? '<span class="star">★</span> ' : '') + esc(m.name) +
+        h += '<tr><td class="t-first" data-label="指标">' + (m.star ? '<span class="star">★</span> ' : '') + esc(m.name) +
           (m.unit && m.unit !== '—' ? ' <span style="color:#7d6f96;font-size:.85em">' + esc(m.unit) + '</span>' : '') + '</td>' +
-          '<td>' + esc(m.baseline) + '</td><td>' + esc(m.current) + '</td>' +
-          '<td style="color:#c084fc">' + esc(m.target) + '</td>' +
-          '<td style="color:#a99cc4">' + esc(m.freq) + '</td>' +
-          '<td>' + trendIcon(m.trend) + '</td></tr>';
+          '<td data-label="基线">' + esc(m.baseline) + '</td><td data-label="当前">' + esc(m.current) + '</td>' +
+          '<td data-label="目标" style="color:#c084fc">' + esc(m.target) + '</td>' +
+          '<td data-label="频次" style="color:#a99cc4">' + esc(m.freq) + '</td>' +
+          '<td data-label="趋势">' + trendIcon(m.trend) + '</td></tr>';
       });
       h += '</tbody></table></div>';
     });
@@ -187,7 +188,9 @@
       h += '<h2 class="sec">随访节奏</h2><div class="card"><table class="fu">' +
         '<thead><tr><th>项目</th><th>频次</th><th>说明</th></tr></thead><tbody>';
       c.followup.forEach(function (f) {
-        h += '<tr><td>' + esc(f.item) + '</td><td>' + esc(f.freq) + '</td><td>' + esc(f.note) + '</td></tr>';
+        h += '<tr><td class="t-first" data-label="项目">' + esc(f.item) + '</td>' +
+          '<td data-label="频次">' + esc(f.freq) + '</td>' +
+          '<td data-label="说明">' + esc(f.note) + '</td></tr>';
       });
       h += '</tbody></table></div>';
     }
@@ -212,10 +215,10 @@
     c.pending_checks.forEach(function (p) {
       var st = p.status || '待核实';
       var cls = st === '已关闭' ? 'ok' : (st === '进行中' ? 'doing' : 'todo');
-      h += '<tr><td><span class="chip st-' + cls + '" style="font-size:.68em">' + esc(st) + '</span>' +
+      h += '<tr><td class="t-first" data-label="状态"><span class="chip st-' + cls + '" style="font-size:.68em">' + esc(st) + '</span>' +
         (p.status_note ? '<div style="color:#b9a9d6;font-size:.85em;margin-top:.3em">' + esc(p.status_note) + '</div>' : '') + '</td>' +
-        '<td>' + esc(p.item) + '</td><td>' + esc(p.why) + '</td>' +
-        '<td style="color:#a99cc4">' + esc(p.how) + '</td></tr>';
+        '<td data-label="待核实事项">' + esc(p.item) + '</td><td data-label="为什么关键">' + esc(p.why) + '</td>' +
+        '<td data-label="怎么拿到" style="color:#a99cc4">' + esc(p.how) + '</td></tr>';
     });
     h += '</tbody></table></div>';
     return h;
@@ -226,8 +229,9 @@
     var h = '<h2 class="sec">下一步 Next Steps</h2>' +
       '<div class="card"><table class="mtable"><thead><tr><th>序</th><th>动作</th><th>说明</th></tr></thead><tbody>';
     c.next_steps.forEach(function (s) {
-      h += '<tr><td>' + esc(s.step) + '</td><td>' + esc(s.action) + '</td>' +
-        '<td style="color:#a99cc4">' + esc(s.note) + '</td></tr>';
+      h += '<tr><td class="t-first" data-label="序">' + esc(s.step) + '</td>' +
+        '<td data-label="动作">' + esc(s.action) + '</td>' +
+        '<td data-label="说明" style="color:#a99cc4">' + esc(s.note) + '</td></tr>';
     });
     h += '</tbody></table></div>';
     return h;

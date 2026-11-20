@@ -61,13 +61,37 @@ footer{margin-top:60px;padding:30px 0 50px;border-top:1px solid var(--line);text
   .tab{padding:7px 14px;font-size:.78em}
   h2.sec{font-size:1.05em;margin:26px 0 10px}
   .note{padding:12px 14px;font-size:.82em}
-  /* metric table -> scrollable instead of squashed */
-  .mtable{display:block;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch}
-  .mtable thead,.mtable tbody{display:table;width:100%;min-width:520px}
-  .ptable{font-size:.84em}
-  .ptable td{padding:8px 3px}
-  .fu{font-size:.82em}
-  .fu td,.fu th{padding:8px 5px}
+  /* ---------- 表格：手机端改为卡片式，避免列被挤窄（如“当前治疗方案”第3列）---------- */
+  .mtable,.fu,.plan-box table{display:block;width:100%}
+  .mtable thead,.fu thead,.plan-box table thead{display:none}
+  .mtable tbody,.fu tbody,.plan-box table tbody{display:block}
+  .mtable tr,.fu tr,.plan-box table tr{display:block;background:rgba(255,255,255,.03);
+    border:1px solid var(--line);border-radius:10px;padding:9px 12px;margin:10px 0}
+  .mtable td,.fu td,.plan-box table td{display:block;border:none;padding:3px 0;
+    font-size:.86em;line-height:1.7;white-space:normal;word-break:break-word;overflow-wrap:anywhere}
+  .mtable td::before,.fu td::before,.plan-box table td::before{content:attr(data-label);
+    display:inline-block;min-width:4.6em;margin-right:6px;color:var(--p3);font-size:.92em;font-weight:600}
+  .mtable td.t-first::before,.fu td.t-first::before,.plan-box table td.t-first::before{display:none}
+  .mtable td.t-first,.fu td.t-first,.plan-box table td.t-first{font-size:.95em;font-weight:700;
+    color:#fff;margin-bottom:5px;line-height:1.6}
+  .plan-box table td.w{white-space:normal}
+  .plan-box table td.n{font-size:.86em}
+  .mtable tr:hover td,.fu tr:hover td{background:transparent}
+  /* 病例档案：项目名一行、内容一行 */
+  .ptable{font-size:.86em}
+  .ptable tr{display:block;padding:7px 0;border-bottom:1px solid rgba(255,255,255,.05)}
+  .ptable td{display:block;padding:1px 0;border:none;width:auto;white-space:normal}
+  .ptable td:first-child{color:var(--p3);font-size:.82em;font-weight:600;width:auto}
+  /* 其余板块在手机上的留白与字号 */
+  .plan-box,.plain-box{padding:14px 13px}
+  .plan-box .pb-h{font-size:1.02em}
+  .plan-box .pb-head{font-size:1em}
+  .plain-box .pb-c{font-size:.94em}
+  .sec-t{font-size:.8em;line-height:1.7}
+  .card h3{font-size:.95em}
+  .gap .wy{font-size:.86em;line-height:1.7}
+  .note{font-size:.8em;line-height:1.7}
+  .card,.plan-box,.plain-box,.gap,.plain-grp{word-break:break-word;overflow-wrap:anywhere}
   .stage{flex-direction:column;gap:4px}
   .stage .num{flex:none}
   .ai{grid-template-columns:1fr}
