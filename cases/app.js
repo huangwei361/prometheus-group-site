@@ -56,6 +56,36 @@
   }
 
 
+  function planBlock(c) {
+    var p = c.plan;
+    if (!p) return '';
+    var h = '<h2 class="sec">当前治疗方案 Current Treatment Plan</h2>' +
+      '<div class="plan-box"><div class="pb-h">' + esc(p.title) + '</div>' +
+      '<div class="pb-head">' + esc(p.headline) + '</div>' +
+      '<div class="pb-why">' + esc(p.why) + '</div>' +
+      '<table><thead><tr><th style="width:20%">时间点</th><th style="width:42%">做什么</th><th>说明</th></tr></thead><tbody>';
+    (p.steps || []).forEach(function (s) {
+      h += '<tr><td class="w">' + esc(s.when) + '</td><td>' + esc(s.what) + '</td>' +
+        '<td class="n">' + esc(s.note) + '</td></tr>';
+    });
+    h += '</tbody></table>';
+    if (p.goal) h += '<div class="pb-goal"><b>目标：</b>' + esc(p.goal) + '</div>';
+    if (p.guard && p.guard.length) {
+      h += '<ul class="pb-guard">';
+      p.guard.forEach(function (g) { h += '<li>' + esc(g) + '</li>'; });
+      h += '</ul>';
+    }
+    if (p.confirm && p.confirm.length) {
+      h += '<div class="pb-confirm"><b>待确认：</b>';
+      p.confirm.forEach(function (c2, i) {
+        h += (i ? '<br>' : '') + '· ' + esc(c2);
+      });
+      h += '</div>';
+    }
+    h += '</div>';
+    return h;
+  }
+
   function plainBlock(c) {
     var p = c.plain;
     if (!p) return '';
@@ -239,7 +269,7 @@
     var c = D[cur];
     var v = document.getElementById('view');
     if (!c) { v.innerHTML = '<div class="card">暂无数据</div>'; return; }
-    v.innerHTML = head(c) + plainBlock(c) + profileBlock(c) + findingsBlock(c) + gapsBlock(c) + metricsBlock(c) + pathwayBlock(c) +
+    v.innerHTML = head(c) + planBlock(c) + plainBlock(c) + profileBlock(c) + findingsBlock(c) + gapsBlock(c) + metricsBlock(c) + pathwayBlock(c) +
       pendingBlock(c) + nextBlock(c) + docsBlock(c);
     renderTabs();
     window.scrollTo({ top: 0, behavior: 'smooth' });

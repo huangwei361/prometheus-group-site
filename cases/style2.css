@@ -47,3 +47,23 @@
 .plain-grp .pg-c{font-size:.95em;line-height:1.75;color:#f2e8ff}
 .plain-grp .pg-a{font-size:.9em;line-height:1.75;color:#cbb9e6;margin-top:5px}
 .plain-grp .pg-k{color:#c084fc;font-weight:700}
+
+/* ---------- 置顶治疗方案 ---------- */
+.plan-box{background:linear-gradient(135deg,rgba(16,185,129,.13),rgba(59,130,246,.07));
+  border:1px solid rgba(16,185,129,.42);border-radius:14px;padding:18px 20px;margin:4px 0 2px}
+.plan-box .pb-h{font-size:1.12em;font-weight:800;color:#5eead4;letter-spacing:.6px;margin-bottom:4px}
+.plan-box .pb-head{font-size:1.08em;font-weight:700;color:#ffffff;margin:6px 0 4px}
+.plan-box .pb-why{font-size:.92em;line-height:1.75;color:#cde8e2;margin-bottom:12px}
+.plan-box table{width:100%;border-collapse:collapse;font-size:.92em}
+.plan-box th{text-align:left;color:#9fe8dc;font-weight:700;padding:7px 8px;border-bottom:1px solid rgba(16,185,129,.3);font-size:.95em}
+.plan-box td{padding:8px;border-bottom:1px solid rgba(255,255,255,.07);vertical-align:top;line-height:1.7;color:#eef6f4}
+.plan-box td.w{white-space:nowrap;color:#8ef0dd;font-weight:700}
+.plan-box td.n{color:#a9c4c0;font-size:.92em}
+.plan-box .pb-goal{margin-top:12px;font-size:.92em;line-height:1.75;color:#d8f3ec;
+  border-left:3px solid #10b981;padding:8px 12px;background:rgba(16,185,129,.08);border-radius:0 8px 8px 0}
+.plan-box .pb-guard{margin:10px 0 0;padding:0;list-style:none}
+.plan-box .pb-guard li{position:relative;padding-left:20px;margin:5px 0;font-size:.9em;line-height:1.7;color:#cfe6e1}
+.plan-box .pb-guard li::before{content:'\26A0';position:absolute;left:0;color:#fbbf24;font-size:.9em}
+.plan-box .pb-confirm{margin-top:12px;padding-top:10px;border-top:1px dashed rgba(16,185,129,.3);
+  font-size:.9em;line-height:1.8;color:#bcd4d0}
+.plan-box .pb-confirm b{color:#8ef0dd}
